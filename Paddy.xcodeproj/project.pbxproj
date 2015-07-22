@@ -15,6 +15,7 @@
 		0F3F0B311B5F8C0700F0A09A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B301B5F8C0700F0A09A /* Images.xcassets */; };
 		0F3F0B341B5F8C0700F0A09A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B321B5F8C0700F0A09A /* LaunchScreen.xib */; };
 		0F3F0B401B5F8C0700F0A09A /* PaddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */; };
+		23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,9 @@
 		0F3F0B391B5F8C0700F0A09A /* PaddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3F0B3E1B5F8C0700F0A09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddyTests.m; sourceTree = "<group>"; };
+		95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.release.xcconfig"; sourceTree = "<group>"; };
+		C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.debug.xcconfig"; sourceTree = "<group>"; };
+		D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Paddy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +74,8 @@
 				0F3F0B1F1B5F8C0700F0A09A /* Paddy */,
 				0F3F0B3C1B5F8C0700F0A09A /* PaddyTests */,
 				0F3F0B1E1B5F8C0700F0A09A /* Products */,
+				184EC001E8B0D80BADA17AFB /* Pods */,
+				B288D3625AB1DD1E1D87BEE3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +131,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		184EC001E8B0D80BADA17AFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */,
+				95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B288D3625AB1DD1E1D87BEE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F3F0B431B5F8C0700F0A09A /* Build configuration list for PBXNativeTarget "Paddy" */;
 			buildPhases = (
+				D7441339B56B3EEB4D913DD1 /* Check Pods Manifest.lock */,
 				0F3F0B191B5F8C0700F0A09A /* Sources */,
 				0F3F0B1A1B5F8C0700F0A09A /* Frameworks */,
 				0F3F0B1B1B5F8C0700F0A09A /* Resources */,
+				4CA07E75D4951CDBD45DB60C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +244,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CA07E75D4951CDBD45DB60C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Paddy/Pods-Paddy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7441339B56B3EEB4D913DD1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F3F0B191B5F8C0700F0A09A /* Sources */ = {
@@ -351,6 +410,7 @@
 		};
 		0F3F0B441B5F8C0700F0A09A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Paddy/Info.plist;
@@ -361,6 +421,7 @@
 		};
 		0F3F0B451B5F8C0700F0A09A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Paddy/Info.plist;
@@ -422,6 +483,7 @@
 				0F3F0B451B5F8C0700F0A09A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F3F0B461B5F8C0700F0A09A /* Build configuration list for PBXNativeTarget "PaddyTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +492,7 @@
 				0F3F0B481B5F8C0700F0A09A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
