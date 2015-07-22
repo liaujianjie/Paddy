@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		0F3F0B231B5F8C0700F0A09A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B221B5F8C0700F0A09A /* main.m */; };
 		0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B251B5F8C0700F0A09A /* AppDelegate.m */; };
-		0F3F0B291B5F8C0700F0A09A /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B281B5F8C0700F0A09A /* FirstViewController.m */; };
-		0F3F0B2C1B5F8C0700F0A09A /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B2B1B5F8C0700F0A09A /* SecondViewController.m */; };
 		0F3F0B2F1B5F8C0700F0A09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B2D1B5F8C0700F0A09A /* Main.storyboard */; };
 		0F3F0B311B5F8C0700F0A09A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B301B5F8C0700F0A09A /* Images.xcassets */; };
 		0F3F0B341B5F8C0700F0A09A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B321B5F8C0700F0A09A /* LaunchScreen.xib */; };
 		0F3F0B401B5F8C0700F0A09A /* PaddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */; };
+		0FD72EC91B5F9103002DA2F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD72EC81B5F9103002DA2F5 /* CoreData.framework */; };
+		0FD72ECC1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ECA1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld */; };
+		0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */; };
+		0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */; };
 		23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */; };
 /* End PBXBuildFile section */
 
@@ -34,16 +36,18 @@
 		0F3F0B221B5F8C0700F0A09A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0F3F0B241B5F8C0700F0A09A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0F3F0B251B5F8C0700F0A09A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0F3F0B271B5F8C0700F0A09A /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		0F3F0B281B5F8C0700F0A09A /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		0F3F0B2A1B5F8C0700F0A09A /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		0F3F0B2B1B5F8C0700F0A09A /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		0F3F0B2E1B5F8C0700F0A09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F3F0B301B5F8C0700F0A09A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0F3F0B331B5F8C0700F0A09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0F3F0B391B5F8C0700F0A09A /* PaddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3F0B3E1B5F8C0700F0A09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddyTests.m; sourceTree = "<group>"; };
+		0FD72EC81B5F9103002DA2F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0FD72ECB1B5F9143002DA2F5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		0FD72ECD1B5F949C002DA2F5 /* NotesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesListViewController.h; sourceTree = "<group>"; };
+		0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesListViewController.m; sourceTree = "<group>"; };
+		0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+IndexPathToString.h"; sourceTree = "<group>"; };
+		0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+IndexPathToString.m"; sourceTree = "<group>"; };
 		95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.release.xcconfig"; sourceTree = "<group>"; };
 		C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.debug.xcconfig"; sourceTree = "<group>"; };
 		D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Paddy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD72EC91B5F9103002DA2F5 /* CoreData.framework in Frameworks */,
 				23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +76,7 @@
 		0F3F0B141B5F8C0700F0A09A = {
 			isa = PBXGroup;
 			children = (
+				0FD72ECA1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld */,
 				0F3F0B1F1B5F8C0700F0A09A /* Paddy */,
 				0F3F0B3C1B5F8C0700F0A09A /* PaddyTests */,
 				0F3F0B1E1B5F8C0700F0A09A /* Products */,
@@ -93,14 +99,14 @@
 			children = (
 				0F3F0B241B5F8C0700F0A09A /* AppDelegate.h */,
 				0F3F0B251B5F8C0700F0A09A /* AppDelegate.m */,
-				0F3F0B271B5F8C0700F0A09A /* FirstViewController.h */,
-				0F3F0B281B5F8C0700F0A09A /* FirstViewController.m */,
-				0F3F0B2A1B5F8C0700F0A09A /* SecondViewController.h */,
-				0F3F0B2B1B5F8C0700F0A09A /* SecondViewController.m */,
+				0FD72ECD1B5F949C002DA2F5 /* NotesListViewController.h */,
+				0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */,
 				0F3F0B2D1B5F8C0700F0A09A /* Main.storyboard */,
 				0F3F0B301B5F8C0700F0A09A /* Images.xcassets */,
 				0F3F0B321B5F8C0700F0A09A /* LaunchScreen.xib */,
 				0F3F0B201B5F8C0700F0A09A /* Supporting Files */,
+				0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */,
+				0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */,
 			);
 			path = Paddy;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 		B288D3625AB1DD1E1D87BEE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FD72EC81B5F9103002DA2F5 /* CoreData.framework */,
 				D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */,
 			);
 			name = Frameworks;
@@ -283,10 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F3F0B2C1B5F8C0700F0A09A /* SecondViewController.m in Sources */,
+				0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m in Sources */,
+				0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */,
 				0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */,
-				0F3F0B291B5F8C0700F0A09A /* FirstViewController.m in Sources */,
 				0F3F0B231B5F8C0700F0A09A /* main.m in Sources */,
+				0FD72ECC1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +503,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0FD72ECA1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0FD72ECB1B5F9143002DA2F5 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 0FD72ECB1B5F9143002DA2F5 /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0F3F0B151B5F8C0700F0A09A /* Project object */;
 }
