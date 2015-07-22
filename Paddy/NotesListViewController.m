@@ -31,9 +31,12 @@
     static NSString *CELLIDENTIFIER = @"NotesCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CELLIDENTIFIER];
     
-    if (!cell)
+//    if (!cell || cell == nil)
     {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CELLIDENTIFIER];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = indexPath.displayableString;
+        cell.detailTextLabel.text = @"detail";
     }
     
     return cell;
