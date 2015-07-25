@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="151" id="ZWv-h9-z2D">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="151"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZWv-h9-z2D" id="OVx-AX-w26">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Lorem Ipsum Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iex-Mk-5Wq">
+                        <rect key="frame" x="15" y="12" width="259" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdJ-PX-dw0">
+                        <rect key="frame" x="282" y="12" width="22.5" height="19"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="0.35000000000000003" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb4-Si-eG2">
+                        <rect key="frame" x="15" y="39" width="290" height="99.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="...sometimes William ">
+                                <attributes>
+                                    <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="pretends">
+                                <attributes>
+                                    <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" to type actual...">
+                                <attributes>
+                                    <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="wb4-Si-eG2" firstAttribute="leading" secondItem="OVx-AX-w26" secondAttribute="leading" constant="15" id="8xr-1H-AWe"/>
+                    <constraint firstItem="wb4-Si-eG2" firstAttribute="top" secondItem="jdJ-PX-dw0" secondAttribute="bottom" constant="8" id="A2t-dT-WVD"/>
+                    <constraint firstAttribute="bottom" secondItem="wb4-Si-eG2" secondAttribute="bottom" constant="12" id="Az6-an-1Cc"/>
+                    <constraint firstItem="jdJ-PX-dw0" firstAttribute="leading" secondItem="Iex-Mk-5Wq" secondAttribute="trailing" constant="8" id="It7-JS-STl"/>
+                    <constraint firstAttribute="trailing" secondItem="wb4-Si-eG2" secondAttribute="trailing" constant="15" id="JtI-mk-JBv"/>
+                    <constraint firstItem="jdJ-PX-dw0" firstAttribute="top" secondItem="OVx-AX-w26" secondAttribute="top" constant="12" id="SSw-gw-X9w"/>
+                    <constraint firstAttribute="trailing" secondItem="jdJ-PX-dw0" secondAttribute="trailing" constant="15" id="bax-Ua-tvi"/>
+                    <constraint firstItem="Iex-Mk-5Wq" firstAttribute="top" secondItem="OVx-AX-w26" secondAttribute="top" constant="12" id="mQu-Z4-I82"/>
+                    <constraint firstItem="Iex-Mk-5Wq" firstAttribute="leading" secondItem="OVx-AX-w26" secondAttribute="leading" constant="15" id="sPs-jh-hUr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="636" y="254.5"/>
+        </tableViewCell>
+    </objects>
+</document>

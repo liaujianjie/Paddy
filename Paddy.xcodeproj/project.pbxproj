@@ -7,30 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0A50241B633BF0002351BB /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A50231B633BF0002351BB /* NoteCell.xib */; };
 		0F3F0B231B5F8C0700F0A09A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B221B5F8C0700F0A09A /* main.m */; };
 		0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B251B5F8C0700F0A09A /* AppDelegate.m */; };
 		0F3F0B2F1B5F8C0700F0A09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B2D1B5F8C0700F0A09A /* Main.storyboard */; };
 		0F3F0B311B5F8C0700F0A09A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B301B5F8C0700F0A09A /* Images.xcassets */; };
 		0F3F0B341B5F8C0700F0A09A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F3F0B321B5F8C0700F0A09A /* LaunchScreen.xib */; };
-		0F3F0B401B5F8C0700F0A09A /* PaddyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */; };
+		0F7820EB1B6159E6006063F7 /* UIImage+imageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F7820EA1B6159E6006063F7 /* UIImage+imageWithColor.m */; };
+		0F7821471B61BFFD006063F7 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F78213A1B61BFFD006063F7 /* delete.png */; };
+		0F7821481B61BFFD006063F7 /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F78213B1B61BFFD006063F7 /* delete@2x.png */; };
+		0F7821491B61BFFD006063F7 /* delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F78213C1B61BFFD006063F7 /* delete@3x.png */; };
+		0F78214A1B61BFFD006063F7 /* numberedlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F78213D1B61BFFD006063F7 /* numberedlist.png */; };
+		0F78214B1B61BFFD006063F7 /* bulletedlist.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F78213E1B61BFFD006063F7 /* bulletedlist.png */; };
+		0F78214C1B61BFFD006063F7 /* underline.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F78213F1B61BFFD006063F7 /* underline.png */; };
+		0F78214D1B61BFFD006063F7 /* italic.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821401B61BFFD006063F7 /* italic.png */; };
+		0F78214E1B61BFFD006063F7 /* bold.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821411B61BFFD006063F7 /* bold.png */; };
+		0F78214F1B61BFFD006063F7 /* archive.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821421B61BFFD006063F7 /* archive.png */; };
+		0F7821501B61BFFD006063F7 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821431B61BFFD006063F7 /* tag.png */; };
+		0F7821511B61BFFD006063F7 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821441B61BFFD006063F7 /* menu.png */; };
+		0F7821521B61BFFD006063F7 /* cell_delete.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821451B61BFFD006063F7 /* cell_delete.png */; };
+		0F7821531B61BFFD006063F7 /* cell_clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7821461B61BFFD006063F7 /* cell_clock.png */; };
+		0FD601DB1B6119CE007544AC /* Paddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FD601D91B6119CE007544AC /* Paddy.xcdatamodeld */; };
+		0FD601DE1B611AC1007544AC /* PDNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD601DD1B611AC1007544AC /* PDNote.m */; };
+		0FD601E11B611AC2007544AC /* PDReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD601E01B611AC2007544AC /* PDReminder.m */; };
+		0FD601E21B611CE6007544AC /* Paddy.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 0FD601D91B6119CE007544AC /* Paddy.xcdatamodeld */; };
+		0FD601E71B61282E007544AC /* NoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD601E61B61282E007544AC /* NoteCell.m */; };
+		0FD601EA1B612C67007544AC /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD601E91B612C67007544AC /* NoteViewController.m */; };
 		0FD72EC91B5F9103002DA2F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD72EC81B5F9103002DA2F5 /* CoreData.framework */; };
-		0FD72ECC1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ECA1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld */; };
 		0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */; };
 		0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */; };
+		0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */; };
 		23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		0F3F0B3A1B5F8C0700F0A09A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0F3F0B151B5F8C0700F0A09A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F3F0B1C1B5F8C0700F0A09A;
-			remoteInfo = Paddy;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		0F0A50231B633BF0002351BB /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		0F3F0B1D1B5F8C0700F0A09A /* Paddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3F0B211B5F8C0700F0A09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F3F0B221B5F8C0700F0A09A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,15 +50,38 @@
 		0F3F0B2E1B5F8C0700F0A09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F3F0B301B5F8C0700F0A09A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0F3F0B331B5F8C0700F0A09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0F3F0B391B5F8C0700F0A09A /* PaddyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaddyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F3F0B3E1B5F8C0700F0A09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddyTests.m; sourceTree = "<group>"; };
+		0F7820E91B6159E6006063F7 /* UIImage+imageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageWithColor.h"; sourceTree = "<group>"; };
+		0F7820EA1B6159E6006063F7 /* UIImage+imageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageWithColor.m"; sourceTree = "<group>"; };
+		0F78213A1B61BFFD006063F7 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
+		0F78213B1B61BFFD006063F7 /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		0F78213C1B61BFFD006063F7 /* delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@3x.png"; sourceTree = "<group>"; };
+		0F78213D1B61BFFD006063F7 /* numberedlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = numberedlist.png; sourceTree = "<group>"; };
+		0F78213E1B61BFFD006063F7 /* bulletedlist.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulletedlist.png; sourceTree = "<group>"; };
+		0F78213F1B61BFFD006063F7 /* underline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underline.png; sourceTree = "<group>"; };
+		0F7821401B61BFFD006063F7 /* italic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = italic.png; sourceTree = "<group>"; };
+		0F7821411B61BFFD006063F7 /* bold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bold.png; sourceTree = "<group>"; };
+		0F7821421B61BFFD006063F7 /* archive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = archive.png; sourceTree = "<group>"; };
+		0F7821431B61BFFD006063F7 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		0F7821441B61BFFD006063F7 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		0F7821451B61BFFD006063F7 /* cell_delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_delete.png; sourceTree = "<group>"; };
+		0F7821461B61BFFD006063F7 /* cell_clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_clock.png; sourceTree = "<group>"; };
+		0FD601DA1B6119CE007544AC /* Paddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Paddy.xcdatamodel; sourceTree = "<group>"; };
+		0FD601DC1B611AC1007544AC /* PDNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDNote.h; path = ../PDNote.h; sourceTree = "<group>"; };
+		0FD601DD1B611AC1007544AC /* PDNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDNote.m; path = ../PDNote.m; sourceTree = "<group>"; };
+		0FD601DF1B611AC2007544AC /* PDReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDReminder.h; path = ../PDReminder.h; sourceTree = "<group>"; };
+		0FD601E01B611AC2007544AC /* PDReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDReminder.m; path = ../PDReminder.m; sourceTree = "<group>"; };
+		0FD601E31B612817007544AC /* libPods-Paddy-MCSwipeTableViewCell.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Paddy-MCSwipeTableViewCell.a"; path = "Pods/../build/Debug-iphoneos/libPods-Paddy-MCSwipeTableViewCell.a"; sourceTree = "<group>"; };
+		0FD601E51B61282E007544AC /* NoteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCell.h; sourceTree = "<group>"; };
+		0FD601E61B61282E007544AC /* NoteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCell.m; sourceTree = "<group>"; };
+		0FD601E81B612C67007544AC /* NoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteViewController.h; sourceTree = "<group>"; };
+		0FD601E91B612C67007544AC /* NoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteViewController.m; sourceTree = "<group>"; };
 		0FD72EC81B5F9103002DA2F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0FD72ECB1B5F9143002DA2F5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		0FD72ECD1B5F949C002DA2F5 /* NotesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesListViewController.h; sourceTree = "<group>"; };
 		0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesListViewController.m; sourceTree = "<group>"; };
 		0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+IndexPathToString.h"; sourceTree = "<group>"; };
 		0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+IndexPathToString.m"; sourceTree = "<group>"; };
+		0FD72EDC1B5F9C50002DA2F5 /* NotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesManager.h; sourceTree = "<group>"; };
+		0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesManager.m; sourceTree = "<group>"; };
 		95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.release.xcconfig"; sourceTree = "<group>"; };
 		C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.debug.xcconfig"; sourceTree = "<group>"; };
 		D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Paddy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,22 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F3F0B361B5F8C0700F0A09A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0F3F0B141B5F8C0700F0A09A = {
 			isa = PBXGroup;
 			children = (
-				0FD72ECA1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld */,
 				0F3F0B1F1B5F8C0700F0A09A /* Paddy */,
-				0F3F0B3C1B5F8C0700F0A09A /* PaddyTests */,
 				0F3F0B1E1B5F8C0700F0A09A /* Products */,
 				184EC001E8B0D80BADA17AFB /* Pods */,
 				B288D3625AB1DD1E1D87BEE3 /* Frameworks */,
@@ -89,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				0F3F0B1D1B5F8C0700F0A09A /* Paddy.app */,
-				0F3F0B391B5F8C0700F0A09A /* PaddyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,16 +121,28 @@
 		0F3F0B1F1B5F8C0700F0A09A /* Paddy */ = {
 			isa = PBXGroup;
 			children = (
+				0FD601DF1B611AC2007544AC /* PDReminder.h */,
+				0FD601E01B611AC2007544AC /* PDReminder.m */,
+				0FD601DC1B611AC1007544AC /* PDNote.h */,
+				0FD601DD1B611AC1007544AC /* PDNote.m */,
+				0FD601D91B6119CE007544AC /* Paddy.xcdatamodeld */,
 				0F3F0B241B5F8C0700F0A09A /* AppDelegate.h */,
 				0F3F0B251B5F8C0700F0A09A /* AppDelegate.m */,
+				0FD72EDC1B5F9C50002DA2F5 /* NotesManager.h */,
+				0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */,
 				0FD72ECD1B5F949C002DA2F5 /* NotesListViewController.h */,
 				0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */,
+				0FD601E81B612C67007544AC /* NoteViewController.h */,
+				0FD601E91B612C67007544AC /* NoteViewController.m */,
 				0F3F0B2D1B5F8C0700F0A09A /* Main.storyboard */,
+				0F0A50231B633BF0002351BB /* NoteCell.xib */,
+				0FD601E51B61282E007544AC /* NoteCell.h */,
+				0FD601E61B61282E007544AC /* NoteCell.m */,
 				0F3F0B301B5F8C0700F0A09A /* Images.xcassets */,
 				0F3F0B321B5F8C0700F0A09A /* LaunchScreen.xib */,
 				0F3F0B201B5F8C0700F0A09A /* Supporting Files */,
-				0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */,
-				0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */,
+				0F7820F71B6191FA006063F7 /* Helper Categories */,
+				0F7820EC1B61631F006063F7 /* Resources */,
 			);
 			path = Paddy;
 			sourceTree = "<group>";
@@ -120,21 +156,35 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0F3F0B3C1B5F8C0700F0A09A /* PaddyTests */ = {
+		0F7820EC1B61631F006063F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0F3F0B3F1B5F8C0700F0A09A /* PaddyTests.m */,
-				0F3F0B3D1B5F8C0700F0A09A /* Supporting Files */,
+				0F78213A1B61BFFD006063F7 /* delete.png */,
+				0F78213B1B61BFFD006063F7 /* delete@2x.png */,
+				0F78213C1B61BFFD006063F7 /* delete@3x.png */,
+				0F78213D1B61BFFD006063F7 /* numberedlist.png */,
+				0F78213E1B61BFFD006063F7 /* bulletedlist.png */,
+				0F78213F1B61BFFD006063F7 /* underline.png */,
+				0F7821401B61BFFD006063F7 /* italic.png */,
+				0F7821411B61BFFD006063F7 /* bold.png */,
+				0F7821421B61BFFD006063F7 /* archive.png */,
+				0F7821431B61BFFD006063F7 /* tag.png */,
+				0F7821441B61BFFD006063F7 /* menu.png */,
+				0F7821451B61BFFD006063F7 /* cell_delete.png */,
+				0F7821461B61BFFD006063F7 /* cell_clock.png */,
 			);
-			path = PaddyTests;
-			sourceTree = "<group>";
+			path = Resources;
+			sourceTree = SOURCE_ROOT;
 		};
-		0F3F0B3D1B5F8C0700F0A09A /* Supporting Files */ = {
+		0F7820F71B6191FA006063F7 /* Helper Categories */ = {
 			isa = PBXGroup;
 			children = (
-				0F3F0B3E1B5F8C0700F0A09A /* Info.plist */,
+				0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */,
+				0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */,
+				0F7820E91B6159E6006063F7 /* UIImage+imageWithColor.h */,
+				0F7820EA1B6159E6006063F7 /* UIImage+imageWithColor.m */,
 			);
-			name = "Supporting Files";
+			name = "Helper Categories";
 			sourceTree = "<group>";
 		};
 		184EC001E8B0D80BADA17AFB /* Pods */ = {
@@ -149,6 +199,7 @@
 		B288D3625AB1DD1E1D87BEE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FD601E31B612817007544AC /* libPods-Paddy-MCSwipeTableViewCell.a */,
 				0FD72EC81B5F9103002DA2F5 /* CoreData.framework */,
 				D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */,
 			);
@@ -177,24 +228,6 @@
 			productReference = 0F3F0B1D1B5F8C0700F0A09A /* Paddy.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F3F0B381B5F8C0700F0A09A /* PaddyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F3F0B461B5F8C0700F0A09A /* Build configuration list for PBXNativeTarget "PaddyTests" */;
-			buildPhases = (
-				0F3F0B351B5F8C0700F0A09A /* Sources */,
-				0F3F0B361B5F8C0700F0A09A /* Frameworks */,
-				0F3F0B371B5F8C0700F0A09A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0F3F0B3B1B5F8C0700F0A09A /* PBXTargetDependency */,
-			);
-			name = PaddyTests;
-			productName = PaddyTests;
-			productReference = 0F3F0B391B5F8C0700F0A09A /* PaddyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -206,10 +239,7 @@
 				TargetAttributes = {
 					0F3F0B1C1B5F8C0700F0A09A = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					0F3F0B381B5F8C0700F0A09A = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 0F3F0B1C1B5F8C0700F0A09A;
+						DevelopmentTeam = S3RHAPH6ZQ;
 					};
 				};
 			};
@@ -227,7 +257,6 @@
 			projectRoot = "";
 			targets = (
 				0F3F0B1C1B5F8C0700F0A09A /* Paddy */,
-				0F3F0B381B5F8C0700F0A09A /* PaddyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -237,16 +266,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD601E21B611CE6007544AC /* Paddy.xcdatamodeld in Resources */,
+				0F78214A1B61BFFD006063F7 /* numberedlist.png in Resources */,
+				0F7821481B61BFFD006063F7 /* delete@2x.png in Resources */,
+				0F78214D1B61BFFD006063F7 /* italic.png in Resources */,
+				0F7821521B61BFFD006063F7 /* cell_delete.png in Resources */,
+				0F0A50241B633BF0002351BB /* NoteCell.xib in Resources */,
+				0F78214F1B61BFFD006063F7 /* archive.png in Resources */,
+				0F7821491B61BFFD006063F7 /* delete@3x.png in Resources */,
+				0F7821501B61BFFD006063F7 /* tag.png in Resources */,
 				0F3F0B2F1B5F8C0700F0A09A /* Main.storyboard in Resources */,
+				0F78214B1B61BFFD006063F7 /* bulletedlist.png in Resources */,
+				0F7821531B61BFFD006063F7 /* cell_clock.png in Resources */,
+				0F78214C1B61BFFD006063F7 /* underline.png in Resources */,
+				0F78214E1B61BFFD006063F7 /* bold.png in Resources */,
+				0F7821511B61BFFD006063F7 /* menu.png in Resources */,
 				0F3F0B341B5F8C0700F0A09A /* LaunchScreen.xib in Resources */,
+				0F7821471B61BFFD006063F7 /* delete.png in Resources */,
 				0F3F0B311B5F8C0700F0A09A /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0F3F0B371B5F8C0700F0A09A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,31 +327,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7820EB1B6159E6006063F7 /* UIImage+imageWithColor.m in Sources */,
 				0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m in Sources */,
+				0FD601E11B611AC2007544AC /* PDReminder.m in Sources */,
 				0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */,
+				0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */,
+				0FD601E71B61282E007544AC /* NoteCell.m in Sources */,
+				0FD601DE1B611AC1007544AC /* PDNote.m in Sources */,
+				0FD601DB1B6119CE007544AC /* Paddy.xcdatamodeld in Sources */,
 				0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */,
+				0FD601EA1B612C67007544AC /* NoteViewController.m in Sources */,
 				0F3F0B231B5F8C0700F0A09A /* main.m in Sources */,
-				0FD72ECC1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0F3F0B351B5F8C0700F0A09A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F3F0B401B5F8C0700F0A09A /* PaddyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0F3F0B3B1B5F8C0700F0A09A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0F3F0B1C1B5F8C0700F0A09A /* Paddy */;
-			targetProxy = 0F3F0B3A1B5F8C0700F0A09A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0F3F0B2D1B5F8C0700F0A09A /* Main.storyboard */ = {
@@ -421,8 +448,13 @@
 			baseConfigurationReference = C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Paddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -432,43 +464,14 @@
 			baseConfigurationReference = 95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Paddy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		0F3F0B471B5F8C0700F0A09A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PaddyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paddy.app/Paddy";
-			};
-			name = Debug;
-		};
-		0F3F0B481B5F8C0700F0A09A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PaddyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paddy.app/Paddy";
 			};
 			name = Release;
 		};
@@ -493,25 +496,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0F3F0B461B5F8C0700F0A09A /* Build configuration list for PBXNativeTarget "PaddyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0F3F0B471B5F8C0700F0A09A /* Debug */,
-				0F3F0B481B5F8C0700F0A09A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0FD72ECA1B5F9143002DA2F5 /* CoreDataModel.xcdatamodeld */ = {
+		0FD601D91B6119CE007544AC /* Paddy.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0FD72ECB1B5F9143002DA2F5 /* CoreDataModel.xcdatamodel */,
+				0FD601DA1B6119CE007544AC /* Paddy.xcdatamodel */,
 			);
-			currentVersion = 0FD72ECB1B5F9143002DA2F5 /* CoreDataModel.xcdatamodel */;
-			path = CoreDataModel.xcdatamodeld;
+			currentVersion = 0FD601DA1B6119CE007544AC /* Paddy.xcdatamodel */;
+			path = Paddy.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
