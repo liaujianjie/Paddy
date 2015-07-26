@@ -106,13 +106,12 @@
         return;
     
     NSRange selectedRange = self.contentTextView.selectedRange;
-    
+
+    NSDictionary *attributes;
     if (selectedRange.length == 0)
-        return;
-    
-    NSDictionary *attributes = [self.contentTextView.attributedText attributesAtIndex:selectedRange.location effectiveRange:&selectedRange];
-    
-    // TODO: still needs work... when i turn on bold, it doesn't show bold (selection length == 0)
+        attributes = [self.contentTextView typingAttributes];
+    else
+        attributes = [self.contentTextView.attributedText attributesAtIndex:selectedRange.location effectiveRange:&selectedRange];
     
     if (!attributes)
         return;
@@ -233,6 +232,25 @@
     [[UIApplication sharedApplication] sendAction:@selector(toggleUnderline:) to:nil from:self forEvent:nil];
     [self updateEditingButtonsForTextAttributes];
 }
+
+#pragma mark Editing Button State Helpers
+
+- (void)toggleBoldface:(id)sender
+{
+    [super toggleBoldface:sender];
+    NSLog(@"textViewFormatting options: %@", [self.contentTextView typingAttributes]);
+}
+
+- (void)toggleItalics:(id)sender
+{
+    [super toggleItalics:sender];
+}
+
+- (void)toggleUnderline:(id)sender
+{
+    [super toggleUnderline:sender];
+}
+
 
 #pragma mark - UITextField Delegate
 
