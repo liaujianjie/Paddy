@@ -13,10 +13,11 @@
 #import "NoteCell.h"
 #import "NoteViewController.h"
 
-@interface NotesListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, NoteCellDelegate, NotesManagerRefreshDelegate>
+@interface NotesListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate, NoteCellDelegate, NotesManagerRefreshDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *notesListTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addNoteButton;
 @property (nonatomic) IBOutlet NSLayoutConstraint *undoToasterVerticalPositionContraint;
 
 - (IBAction)pressedNewNote:(id)sender;

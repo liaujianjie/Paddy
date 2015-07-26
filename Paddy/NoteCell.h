@@ -16,8 +16,12 @@
 
 @interface NoteCell : MCSwipeTableViewCell
 
-@property (nonatomic, weak) id<NoteCellDelegate> deleteDelegate;
-@property (nonatomic, retain) PDNote *note;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@property (nonatomic, weak) id<NoteCellDelegate> swipeGestureDelegate;
+@property (nonatomic, strong) PDNote *note;
 @property (nonatomic, strong) NSString *searchTerm;
 @property (nonatomic, strong) NSTimer *timeLabelRefreshTimer;
 
@@ -28,5 +32,6 @@
 @required
 
 - (void)swipedToDeleteNoteAtCell:(NoteCell *)cell;
+- (void)swipedToCreateReminder:(NoteCell *)cell;
 
 @end

@@ -24,12 +24,15 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage imageWithColor:[UIColor colorWithHexNum:0x000000 alpha:0.04]]];
     
     [[UIToolbar appearance] setTranslucent:NO];
-    [[UIToolbar appearance] setBarTintColor:[UIColor colorWithHexNum:0xFBFBFB alpha:1.0]];
+    [[UIToolbar appearance] setBarTintColor:[UIColor colorWithWhite:1.0 alpha:1.0]];
     [[UIToolbar appearance] setTintColor:[UIColor colorWithHexNum:0x037AFF alpha:1.0]];
-    [[UIToolbar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexNum:0xFBFBFB alpha:0.04]]
+//    [[UIToolbar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexNum:0xFBFBFB alpha:0.04]]
+//                            forToolbarPosition:UIBarPositionAny
+//                                    barMetrics:UIBarMetricsDefault];
+    [[UIToolbar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:1.0 alpha:1.0]]
                             forToolbarPosition:UIBarPositionAny
                                     barMetrics:UIBarMetricsDefault];
-    [[UIToolbar appearance] setShadowImage:[UIImage imageWithColor:[UIColor colorWithHexNum:0xFBFBFB alpha:0.04]]forToolbarPosition:UIBarPositionAny];
+    [[UIToolbar appearance] setShadowImage:[UIImage imageWithColor:[UIColor colorWithHexNum:0x000000 alpha:0.04]]forToolbarPosition:UIBarPositionAny];
     
     return YES;
 }

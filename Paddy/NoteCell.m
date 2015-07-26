@@ -11,22 +11,22 @@
 
 @implementation NoteCell
 
-@synthesize delegate;
+@synthesize swipeGestureDelegate;
 @synthesize note;
 @synthesize searchTerm;
 
 #pragma mark - Setup Helpers
 
-- (void)setupStyle
-{
-    self.backgroundColor = kBackgroundColour;
-    self.contentView.backgroundColor = kBackgroundColour;
-    self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
-    self.textLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:1.0];
-    self.detailTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0];
-    self.detailTextLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:0.35];
-    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-}
+//- (void)setupStyle
+//{
+//    self.backgroundColor = kBackgroundColour;
+//    self.contentView.backgroundColor = kBackgroundColour;
+//    self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
+//    self.titleLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:1.0];
+//    self.timeStampLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16.0];
+//    self.timeStampLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:0.35];
+//    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//}
 
 - (void)setupSwipeGesture
 {
@@ -42,14 +42,14 @@
                              mode:MCSwipeTableViewCellModeSwitch
                             state:MCSwipeTableViewCellState3
                   completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-                      NSLog(@"Swipe to remind");
+                      [self.swipeGestureDelegate swipedToCreateReminder:self];
                   }];
     [self setSwipeGestureWithView:[self cellDeleteView]
                             color:redColor
                              mode:MCSwipeTableViewCellModeExit
                             state:MCSwipeTableViewCellState4
                   completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-                      [self.deleteDelegate swipedToDeleteNoteAtCell:self];
+                      [self.swipeGestureDelegate swipedToDeleteNoteAtCell:self];
                   }];
 }
 
@@ -73,11 +73,21 @@
 
 #pragma mark - Overrides
 
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+//- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+//{
+//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+//    
+//    [self setupStyle];
+//    [self setupSwipeGesture];
+//    
+//    return self;
+//}
+
+- (instancetype)init
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [[NSBundle mainBundle] loadNibNamed:@"NoteCell" owner:self options:nil][0];
+    self.contentLabel.hidden = YES;
     
-    [self setupStyle];
     [self setupSwipeGesture];
     
     return self;
@@ -88,20 +98,34 @@
     self->note = newNote;
     
     if (newNote.title.length != 0)
-        self.textLabel.text = newNote.title;
+        self.titleLabel.text = newNote.title;
     else if (newNote.content.length != 0)
-        self.textLabel.text = newNote.content;
+        self.titleLabel.text = newNote.content;
     else
     {
-        self.textLabel.text = @"Empty note";
-        self.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Italic" size:16.0];
-        self.textLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:0.5];
+        self.titleLabel.text = @"Empty note";
+        self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Italic" size:16.0];
+        self.titleLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:0.5];
     }
-//    self.detailTextLabel.text = newNote.lastModifiedDate.shortTimeAgoSinceNow;
+//    self.timeStampLabel.text = newNote.lastModifiedDate.shortTimeAgoSinceNow;
+    
+    NSTimeInterval timeSinceDate = -[self.note.createdDate timeIntervalSinceNow];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"d/M/yyyy"];
-    self.detailTextLabel.text = [formatter stringFromDate:newNote.createdDate];
-    NSLog(@"created date : %@",[formatter stringFromDate:newNote.createdDate]);
+    if (timeSinceDate > 60*60*24)
+        [formatter setDateFormat:@"d/M/yyyy"];
+    else
+        [formatter setDateFormat:@"h:m"];
+    self.timeStampLabel.text = [formatter stringFromDate:newNote.createdDate];
+}
+
+- (void)setSearchTerm:(NSString *)newSearchTerm
+{
+    self->searchTerm = newSearchTerm;
+    
+    if (!searchTerm || searchTerm.length == 0)
+        self.contentLabel.hidden = YES;
+    else
+        self.contentLabel.hidden = NO;
 }
 
 @end

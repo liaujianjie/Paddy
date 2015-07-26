@@ -40,7 +40,7 @@
                                 <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoteCell" textLabel="Q1b-xh-zvY" detailTextLabel="BwO-L5-eSi" style="IBUITableViewCellStyleValue1" id="UpI-hR-i77" customClass="NoteCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Q1b-xh-zvY" detailTextLabel="BwO-L5-eSi" style="IBUITableViewCellStyleValue1" id="UpI-hR-i77" customClass="NoteCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UpI-hR-i77" id="bnQ-8Q-Sh1">
@@ -143,16 +143,111 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addNoteButton" destination="gx7-0f-p0K" id="zfz-l3-Bzd"/>
                         <outlet property="notesListTableView" destination="76B-ct-An7" id="FGJ-8p-Fb5"/>
                         <outlet property="searchBar" destination="e7S-nU-3og" id="Sif-dw-uEU"/>
                         <outlet property="undoToasterVerticalPositionContraint" destination="Ekn-y6-UmM" id="3QV-SK-12C"/>
                         <segue destination="pYv-8I-oKi" kind="presentation" identifier="GoToExistingNote" id="Ldc-BM-MGu"/>
                         <segue destination="pYv-8I-oKi" kind="presentation" identifier="GoToNewNote" id="G0Y-ig-Qvm"/>
+                        <segue destination="ifq-ts-Ehl" kind="presentation" identifier="PopReminderDatePicker" id="7kJ-kx-IMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="963" y="-267"/>
+        </scene>
+        <!--Date Picker Popup View Controller-->
+        <scene sceneID="01G-NL-rK6">
+            <objects>
+                <viewController id="ifq-ts-Ehl" customClass="DatePickerPopupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G4G-ye-ZAQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="vdv-dg-zWW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pDV-q5-n9F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wk0-YZ-xxy">
+                                <rect key="frame" x="0.0" y="279" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="459572152.80229098">
+                                    <!--2015-07-26 02:55:52 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR9-tv-TD7">
+                                <rect key="frame" x="246" y="39" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="DYc-xA-6VM">
+                                <rect key="frame" x="20" y="146" width="284" height="132"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="IBd-wH-eyo"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lVn-vi-XUE">
+                                    <size key="itemSize" width="70" height="43"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickDateOptionCell" id="anc-Hw-s7b" customClass="QuickDateOptionCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="onH-Ue-Z6T">
+                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="43"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.01176470588" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="onH-Ue-Z6T" secondAttribute="trailing" id="M7G-fr-TQe"/>
+                                            <constraint firstAttribute="bottom" secondItem="onH-Ue-Z6T" secondAttribute="bottom" id="NBs-1y-WA0"/>
+                                            <constraint firstItem="onH-Ue-Z6T" firstAttribute="top" secondItem="anc-Hw-s7b" secondAttribute="top" id="Qb9-oI-UvX"/>
+                                            <constraint firstAttribute="centerX" secondItem="onH-Ue-Z6T" secondAttribute="centerX" id="TgT-F7-znd"/>
+                                            <constraint firstAttribute="centerY" secondItem="onH-Ue-Z6T" secondAttribute="centerY" id="es8-7c-lCi"/>
+                                            <constraint firstItem="onH-Ue-Z6T" firstAttribute="leading" secondItem="anc-Hw-s7b" secondAttribute="leading" id="o0w-bt-Afm"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TgT-F7-znd"/>
+                                                <exclude reference="es8-7c-lCi"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="onH-Ue-Z6T" id="1rx-iL-Mja"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ifq-ts-Ehl" id="rco-Ve-ELT"/>
+                                    <outlet property="delegate" destination="ifq-ts-Ehl" id="maG-ik-hg9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wk0-YZ-xxy" firstAttribute="leading" secondItem="pDV-q5-n9F" secondAttribute="leading" id="YRQ-gA-JpT"/>
+                            <constraint firstAttribute="centerX" secondItem="DYc-xA-6VM" secondAttribute="centerX" id="kls-YK-0pS"/>
+                            <constraint firstAttribute="trailing" secondItem="wk0-YZ-xxy" secondAttribute="trailing" id="zSz-ga-igs"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="85K-Lr-keq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="-267"/>
         </scene>
         <!--Inbox List-->
         <scene sceneID="wg7-f3-ORb">
@@ -179,7 +274,7 @@
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Mfc-5z-5jz">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pwu-Dr-vUL">
@@ -225,25 +320,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-bf-JyA">
-                                <rect key="frame" x="0.0" y="72" width="320" height="384"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outlet property="delegate" destination="pYv-8I-oKi" id="5UA-kV-mHW"/>
-                                </connections>
-                            </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l62-nP-tXC">
                                 <rect key="frame" x="0.0" y="456" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="trash" id="f4m-Jq-xP1"/>
+                                    <barButtonItem systemItem="trash" id="f4m-Jq-xP1">
+                                        <connections>
+                                            <action selector="pressedDeleteNote:" destination="pYv-8I-oKi" id="IZz-pv-O99"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="4Vq-Ct-QdH"/>
+                                    <barButtonItem style="plain" id="6JX-co-Bk3">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YWn-sR-Ntw">
+                                            <rect key="frame" x="280" y="-28" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                            <state key="normal" image="editing-bulletedlist-muted.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="pressedBulletedList:" destination="pYv-8I-oKi" eventType="touchUpInside" id="bE9-7C-bNB"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="oQM-4s-KvZ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8vl-HU-v8b">
+                                            <rect key="frame" x="165" y="12" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="contentEdgeInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                            <state key="normal" image="editing-numberedlist-muted.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="pressedNumberedList:" destination="pYv-8I-oKi" eventType="touchUpInside" id="av5-MX-WUd"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="68F-bS-w6Z"/>
+                                    <barButtonItem style="plain" id="z6J-g3-wqy">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="14a-SG-QSY">
+                                            <rect key="frame" x="45" y="-28" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                            <state key="normal" image="editing-bold-muted.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="pressedBold:" destination="pYv-8I-oKi" eventType="touchUpInside" id="Jjf-Ba-HFt"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="RSe-gR-lkh">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pT7-4H-yXY">
+                                            <rect key="frame" x="45" y="-28" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                            <state key="normal" image="editing-italic-muted.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="pressedItalic:" destination="pYv-8I-oKi" eventType="touchUpInside" id="5dF-AG-1LL"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="QSX-Kh-6LZ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew9-Zr-R50">
+                                            <rect key="frame" x="45" y="-28" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                            <state key="normal" image="editing-underline-muted.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="pressedUnderline:" destination="pYv-8I-oKi" eventType="touchUpInside" id="toP-SD-65A"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTn-7I-skX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 minute ago – 25/5/2015 11:13 am" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FU-wU-a1i">
                                         <rect key="frame" x="15" y="52" width="219.5" height="17"/>
@@ -252,7 +407,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOg-h3-yAZ">
-                                        <rect key="frame" x="271" y="34" width="32" height="32"/>
+                                        <rect key="frame" x="278" y="20" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="0e6-eM-oDi"/>
                                             <constraint firstAttribute="height" constant="32" id="73W-g2-MR1"/>
@@ -262,16 +417,16 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="presssedDismiss:" destination="pYv-8I-oKi" eventType="touchUpInside" id="nA5-ZA-ckY"/>
+                                            <action selector="pressedDismiss:" destination="pYv-8I-oKi" eventType="touchUpInside" id="Fns-7s-glC"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Lorem Ipsum" placeholder="Untitled" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKO-5m-BgA">
-                                        <rect key="frame" x="15" y="28" width="248" height="24"/>
+                                        <rect key="frame" x="15" y="28" width="255" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="BN2-J8-d2C"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardAppearance="alert" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="pYv-8I-oKi" id="f8U-fR-VtE"/>
                                         </connections>
@@ -280,20 +435,37 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="VKO-5m-BgA" firstAttribute="top" secondItem="CTn-7I-skX" secondAttribute="top" constant="28" id="4i2-N7-ddl"/>
-                                    <constraint firstItem="jOg-h3-yAZ" firstAttribute="top" secondItem="CTn-7I-skX" secondAttribute="top" constant="34" id="M6t-cv-27s"/>
+                                    <constraint firstItem="jOg-h3-yAZ" firstAttribute="top" secondItem="CTn-7I-skX" secondAttribute="top" constant="20" id="M6t-cv-27s"/>
                                     <constraint firstItem="VKO-5m-BgA" firstAttribute="leading" secondItem="7FU-wU-a1i" secondAttribute="leading" id="SDP-0s-1ay"/>
                                     <constraint firstItem="VKO-5m-BgA" firstAttribute="leading" secondItem="CTn-7I-skX" secondAttribute="leading" constant="15" id="ahd-ao-Km2"/>
                                     <constraint firstItem="7FU-wU-a1i" firstAttribute="top" secondItem="VKO-5m-BgA" secondAttribute="bottom" id="fu2-UP-mVa"/>
-                                    <constraint firstAttribute="trailing" secondItem="jOg-h3-yAZ" secondAttribute="trailing" constant="17" id="lU0-HS-Jj0"/>
+                                    <constraint firstAttribute="trailing" secondItem="jOg-h3-yAZ" secondAttribute="trailing" constant="10" id="lU0-HS-Jj0"/>
                                     <constraint firstItem="jOg-h3-yAZ" firstAttribute="leading" secondItem="VKO-5m-BgA" secondAttribute="trailing" constant="8" id="rZR-Bz-4O6"/>
-                                    <constraint firstAttribute="height" constant="72" id="zMt-Re-2S8"/>
+                                    <constraint firstAttribute="height" constant="77" id="zMt-Re-2S8"/>
                                 </constraints>
                             </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4qr-RW-gW2">
+                                <rect key="frame" x="13" y="77" width="294" height="1"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Lb3-91-qYi"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SP1-bf-JyA">
+                                <rect key="frame" x="0.0" y="77" width="320" height="379"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pYv-8I-oKi" id="5UA-kV-mHW"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="NhN-tn-1W4" firstAttribute="top" secondItem="l62-nP-tXC" secondAttribute="bottom" id="4uH-66-PWu"/>
                             <constraint firstItem="SP1-bf-JyA" firstAttribute="top" secondItem="CTn-7I-skX" secondAttribute="bottom" id="70Q-9u-xWh"/>
                             <constraint firstItem="CTn-7I-skX" firstAttribute="top" secondItem="44J-Aq-fyD" secondAttribute="top" id="9lG-xl-8kM"/>
                             <constraint firstItem="l62-nP-tXC" firstAttribute="top" secondItem="SP1-bf-JyA" secondAttribute="bottom" id="Af6-0a-IRc"/>
@@ -303,13 +475,11 @@
                             <constraint firstItem="l62-nP-tXC" firstAttribute="leading" secondItem="44J-Aq-fyD" secondAttribute="leading" id="YJe-1P-KSF"/>
                             <constraint firstAttribute="trailing" secondItem="l62-nP-tXC" secondAttribute="trailing" id="dOE-TG-pUX"/>
                             <constraint firstAttribute="trailing" secondItem="SP1-bf-JyA" secondAttribute="trailing" id="ltx-Cl-tjJ"/>
+                            <constraint firstItem="4qr-RW-gW2" firstAttribute="top" secondItem="CTn-7I-skX" secondAttribute="bottom" id="sC3-kQ-Mu4"/>
+                            <constraint firstItem="4qr-RW-gW2" firstAttribute="leading" secondItem="44J-Aq-fyD" secondAttribute="leading" constant="13" id="sru-Ps-4uO"/>
                             <constraint firstAttribute="trailing" secondItem="CTn-7I-skX" secondAttribute="trailing" id="tzh-cD-TuK"/>
+                            <constraint firstAttribute="trailing" secondItem="4qr-RW-gW2" secondAttribute="trailing" constant="13" id="uX4-Pl-PVD"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="4uH-66-PWu"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="OLi-r4-JZj">
                         <nil key="title"/>
@@ -318,11 +488,19 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="500"/>
                     <connections>
-                        <outlet property="contentTextView" destination="SP1-bf-JyA" id="Kxt-AD-V0p"/>
+                        <outlet property="boldButton" destination="14a-SG-QSY" id="Yoj-9e-QGw"/>
+                        <outlet property="bulletedListButton" destination="YWn-sR-Ntw" id="fCx-ea-2Qd"/>
+                        <outlet property="contentTextView" destination="SP1-bf-JyA" id="znh-fo-E2h"/>
+                        <outlet property="dismissButton" destination="jOg-h3-yAZ" id="rIo-L8-XSr"/>
                         <outlet property="headerVerticalPositionConstraint" destination="9lG-xl-8kM" id="kRZ-ag-GiC"/>
                         <outlet property="headerView" destination="CTn-7I-skX" id="PWt-ck-DfC"/>
+                        <outlet property="italicButton" destination="pT7-4H-yXY" id="oVg-gx-IBg"/>
+                        <outlet property="numberedListButton" destination="8vl-HU-v8b" id="59y-zX-ruI"/>
+                        <outlet property="separatorLineView" destination="4qr-RW-gW2" id="TNA-Yc-7q2"/>
                         <outlet property="timeStampLabel" destination="7FU-wU-a1i" id="7xs-6F-cbt"/>
                         <outlet property="titleTextField" destination="VKO-5m-BgA" id="wRw-6t-LTK"/>
+                        <outlet property="toolbarBottomSpacingConstraint" destination="Bpk-Xb-kmB" id="kWH-dl-lGw"/>
+                        <outlet property="underlineButton" destination="ew9-Zr-R50" id="g0K-n2-0Jn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSl-6z-c7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -332,6 +510,11 @@
     </scenes>
     <resources>
         <image name="delete.png" width="14" height="14"/>
+        <image name="editing-bold-muted.png" width="64" height="64"/>
+        <image name="editing-bulletedlist-muted.png" width="64" height="64"/>
+        <image name="editing-italic-muted.png" width="64" height="64"/>
+        <image name="editing-numberedlist-muted.png" width="64" height="64"/>
+        <image name="editing-underline-muted.png" width="64" height="64"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

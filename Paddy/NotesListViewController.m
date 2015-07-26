@@ -26,6 +26,8 @@
     
     self.title = @"Notes";
     [self.notesListTableView registerClass:[NoteCell class] forCellReuseIdentifier:kNotesCellIdentifier];
+    [self.notesListTableView registerNib:[UINib nibWithNibName:@"NoteCell" bundle:[NSBundle mainBundle]]
+                  forCellReuseIdentifier:kNotesCellIdentifier];
 
     [self.searchBar setBackgroundColor:[UIColor clearColor]];
     [self.searchBar setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexNum:0xFBFBFB alpha:0.04]]
@@ -87,9 +89,10 @@
     PDNote *note = [self notesFromSearch][indexPath.row];
     
     NoteCell *cell = [tableView dequeueReusableCellWithIdentifier:kNotesCellIdentifier];
-    cell = [[NoteCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kNotesCellIdentifier];
+//    cell = [[NoteCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kNotesCellIdentifier];
+    cell = [[NoteCell alloc] init];
     cell.note = note;
-    cell.deleteDelegate = self;
+    cell.swipeGestureDelegate = self;
     
     return cell;
 }
@@ -103,6 +106,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // search with one line: 68
+    if (!self.searchBar.text || self.searchBar.text.length == 0)
+        return 44.0;
     return 44.0;
 }
 
@@ -113,7 +119,7 @@
     return [[NotesManager sharedNotesManager] notesFromSearchTerm:self.searchBar.text];
 }
 
-#pragma mark - UITableView Delegate
+#pragma mark UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -125,10 +131,13 @@
     [self performSegueWithIdentifier:@"GoToNewNote" sender:sender];
 }
 
+- (void)swipedToCreateReminder:(NoteCell *)cell
+{
+    [self performSegueWithIdentifier:@"PopReminderDatePicker" sender:self];
+}
+
 - (void)swipedToDeleteNoteAtCell:(NoteCell *)cell
 {
-    
-    
     [self.notesListTableView beginUpdates];
     [[NotesManager sharedNotesManager] deleteNote:cell.note asynchronously:NO];
     [self.notesListTableView deleteRowsAtIndexPaths:@[[self.notesListTableView indexPathForCell:cell]] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -140,6 +149,29 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     [self.notesListTableView reloadData];
+}
+
+#pragma mark - UIScrollView Delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    const CGFloat requiredOffsetForNewNote = 150.0;
+    if (scrollView == self.notesListTableView)
+    {
+        UIView *buttonView = [self.addNoteButton valueForKey:@"view"];
+//        UIImageView *buttonImageView = [buttonView valueForKey:@"_imageView"];
+        
+        if (scrollView.contentOffset.y < -requiredOffsetForNewNote)
+            [self performSegueWithIdentifier:@"GoToNewNote" sender:scrollView];
+        
+        if (scrollView.contentOffset.y < 0)
+        {
+            CGFloat scaleAmount = 1.0 + (-scrollView.contentOffset.y)/requiredOffsetForNewNote * 0.5;
+            buttonView.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount);
+        }
+        else
+            buttonView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+    }
 }
 
 @end
