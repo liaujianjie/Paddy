@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F0331001B65278B0080879B /* UITextView+selectionHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0330FF1B65278B0080879B /* UITextView+selectionHelpers.m */; };
 		0F0A50241B633BF0002351BB /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F0A50231B633BF0002351BB /* NoteCell.xib */; };
 		0F3F0B231B5F8C0700F0A09A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B221B5F8C0700F0A09A /* main.m */; };
 		0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F3F0B251B5F8C0700F0A09A /* AppDelegate.m */; };
@@ -42,12 +43,14 @@
 		0FD601EA1B612C67007544AC /* NoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD601E91B612C67007544AC /* NoteViewController.m */; };
 		0FD72EC91B5F9103002DA2F5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD72EC81B5F9103002DA2F5 /* CoreData.framework */; };
 		0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */; };
-		0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */; };
+		0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+displayableString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+displayableString.m */; };
 		0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */; };
 		23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0330FE1B65278B0080879B /* UITextView+selectionHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+selectionHelpers.h"; sourceTree = "<group>"; };
+		0F0330FF1B65278B0080879B /* UITextView+selectionHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+selectionHelpers.m"; sourceTree = "<group>"; };
 		0F0A50231B633BF0002351BB /* NoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
 		0F3F0B1D1B5F8C0700F0A09A /* Paddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F3F0B211B5F8C0700F0A09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,8 +97,8 @@
 		0FD72EC81B5F9103002DA2F5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0FD72ECD1B5F949C002DA2F5 /* NotesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesListViewController.h; sourceTree = "<group>"; };
 		0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesListViewController.m; sourceTree = "<group>"; };
-		0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+IndexPathToString.h"; sourceTree = "<group>"; };
-		0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+IndexPathToString.m"; sourceTree = "<group>"; };
+		0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+displayableString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+displayableString.h"; sourceTree = "<group>"; };
+		0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+displayableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+displayableString.m"; sourceTree = "<group>"; };
 		0FD72EDC1B5F9C50002DA2F5 /* NotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesManager.h; sourceTree = "<group>"; };
 		0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesManager.m; sourceTree = "<group>"; };
 		95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.release.xcconfig"; sourceTree = "<group>"; };
@@ -204,10 +207,12 @@
 		0F7820F71B6191FA006063F7 /* Helper Categories */ = {
 			isa = PBXGroup;
 			children = (
-				0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.h */,
-				0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m */,
+				0FD72ED01B5F95BA002DA2F5 /* NSIndexPath+displayableString.h */,
+				0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+displayableString.m */,
 				0F7820E91B6159E6006063F7 /* UIImage+imageWithColor.h */,
 				0F7820EA1B6159E6006063F7 /* UIImage+imageWithColor.m */,
+				0F0330FE1B65278B0080879B /* UITextView+selectionHelpers.h */,
+				0F0330FF1B65278B0080879B /* UITextView+selectionHelpers.m */,
 			);
 			name = "Helper Categories";
 			sourceTree = "<group>";
@@ -359,10 +364,11 @@
 			files = (
 				0F7820EB1B6159E6006063F7 /* UIImage+imageWithColor.m in Sources */,
 				0F56AEC31B6485D700AB3880 /* DatePickerPopupViewController.m in Sources */,
-				0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+IndexPathToString.m in Sources */,
+				0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+displayableString.m in Sources */,
 				0FD601E11B611AC2007544AC /* PDReminder.m in Sources */,
 				0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */,
 				0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */,
+				0F0331001B65278B0080879B /* UITextView+selectionHelpers.m in Sources */,
 				0FD601E71B61282E007544AC /* NoteCell.m in Sources */,
 				0FD601DE1B611AC1007544AC /* PDNote.m in Sources */,
 				0FD601DB1B6119CE007544AC /* Paddy.xcdatamodeld in Sources */,

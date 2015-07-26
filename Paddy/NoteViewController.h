@@ -10,6 +10,7 @@
 #import "PDNote.h"
 #import "NotesManager.h"
 #import "DateTools.h"
+#import "UITextView+selectionHelpers.h"
 
 typedef NS_ENUM(NSUInteger, NotesViewAlert)
 {

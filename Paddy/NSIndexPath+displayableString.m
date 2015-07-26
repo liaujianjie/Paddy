@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Liau Jian Jie. All rights reserved.
 //
 
-#import "NSIndexPath+IndexPathToString.h"
+#import "NSIndexPath+displayableString.h"
 
-@implementation NSIndexPath (IndexPathToString)
+@implementation NSIndexPath (displayableString)
 
 - (NSString *)displayableString
 {

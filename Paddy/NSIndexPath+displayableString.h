@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @import UIKit;
-@interface NSIndexPath (IndexPathToString)
+@interface NSIndexPath (displayableString)
 
 - (NSString *)displayableString;
 

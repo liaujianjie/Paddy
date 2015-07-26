@@ -89,7 +89,7 @@
 
 - (void)updateTimeAgoLabel
 {
-    NSString *timeAgo = self.note.createdDate.timeAgoSinceNow;
+    NSString *timeAgo = self.note.lastModifiedDate.timeAgoSinceNow;
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@" d/M/yyyy h:m"];
@@ -160,10 +160,63 @@
 #pragma mark Editing Button Handlers
 
 - (IBAction)pressedBulletedList:(id)sender {
+    if (!self.contentTextView.isFirstResponder)
+        return;
+    
+    NSArray *splitStrings = [self.contentTextView.text componentsSeparatedByString:@"\n"];
+    NSUInteger lineOfSelection = [self.contentTextView lineOfStartOfSelection];
+    NSUInteger locationOfSelection = [self.contentTextView locationOfStartOfSelectionInLine];
+    NSString *stringInLine = (NSString *)(splitStrings[lineOfSelection]);
+    
+    if (stringInLine.length > 0 && locationOfSelection == stringInLine.length)
+        [self.contentTextView insertText:@"\n\u2022 "];
+    else
+        [self.contentTextView insertText:@"\u2022 "];
+    
     [self updateEditingButtonsForTextAttributes];
 }
 
 - (IBAction)pressedNumberedList:(id)sender {
+    if (!self.contentTextView.isFirstResponder)
+        return;
+    
+    NSString *stringToInsert = @"";
+    NSInteger numberForBullet;
+    
+    NSArray *splitStrings = [self.contentTextView.text componentsSeparatedByString:@"\n"];
+    NSUInteger lineOfSelection = [self.contentTextView lineOfStartOfSelection];
+    NSUInteger locationOfSelection = [self.contentTextView locationOfStartOfSelectionInLine];
+    NSString *stringInLine = (NSString *)(splitStrings[lineOfSelection]);
+    
+    if (lineOfSelection == 0)
+        numberForBullet = 1;
+    else
+    {
+        NSString *string = splitStrings[lineOfSelection-1];
+        NSArray *furtherSplitStrings = [string componentsSeparatedByString:@". "];
+        
+        if (furtherSplitStrings.count <= 1)
+            numberForBullet = 1;
+        else
+        {
+            NSScanner *scan = [NSScanner scannerWithString:furtherSplitStrings[0]];
+            NSInteger scannedInteger;
+            [scan scanInteger:&scannedInteger];
+            if ([scan isAtEnd])
+                numberForBullet = scannedInteger+1;
+            else
+                numberForBullet = 1;
+        }
+    }
+    
+    if (stringInLine.length > 0 && locationOfSelection == stringInLine.length)
+    {
+        stringToInsert = [@"\n" stringByAppendingString:stringToInsert];
+        numberForBullet ++;
+    }
+    stringToInsert = [stringToInsert stringByAppendingString:[NSString stringWithFormat:@"%ld. ",numberForBullet]];
+    
+    [self.contentTextView insertText:stringToInsert];
 }
 
 - (IBAction)pressedBold:(id)sender {

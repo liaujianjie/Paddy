@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NSIndexPath+IndexPathToString.h"
+//#import "NSIndexPath+displayableString.h"
 #import "UIImage+imageWithColor.h"
 #import "NotesManager.h"
 #import "NoteCell.h"
