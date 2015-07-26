@@ -187,33 +187,47 @@
     NSUInteger locationOfSelection = [self.contentTextView locationOfStartOfSelectionInLine];
     NSString *stringInLine = (NSString *)(splitStrings[lineOfSelection]);
     
+    BOOL pressedWhenAtEndOfLine = (locationOfSelection == stringInLine.length);
+    
     if (lineOfSelection == 0)
-        numberForBullet = 1;
-    else
     {
-        NSString *string = splitStrings[lineOfSelection-1];
-        NSArray *furtherSplitStrings = [string componentsSeparatedByString:@". "];
-        
-        if (furtherSplitStrings.count <= 1)
+        if (!pressedWhenAtEndOfLine || !((NSString *)splitStrings[0]) || ((NSString *)splitStrings[0]).length == 0)
             numberForBullet = 1;
         else
         {
+            NSArray *furtherSplitStrings = [splitStrings[0] componentsSeparatedByString:@"."];
             NSScanner *scan = [NSScanner scannerWithString:furtherSplitStrings[0]];
             NSInteger scannedInteger;
             [scan scanInteger:&scannedInteger];
+            
             if ([scan isAtEnd])
                 numberForBullet = scannedInteger+1;
-            else
-                numberForBullet = 1;
         }
     }
-    
-    if (stringInLine.length > 0 && locationOfSelection == stringInLine.length)
+    else
     {
-        stringToInsert = [@"\n" stringByAppendingString:stringToInsert];
-        numberForBullet ++;
+        NSString *string;
+        if (pressedWhenAtEndOfLine && stringInLine.length > 0)
+            string = splitStrings[lineOfSelection];
+        else
+            string = splitStrings[lineOfSelection-1];
+        NSArray *furtherSplitStrings = [string componentsSeparatedByString:@"."];
+        
+        NSScanner *scan = [NSScanner scannerWithString:furtherSplitStrings[0]];
+        NSInteger scannedInteger;
+        [scan scanInteger:&scannedInteger];
+        if (!((NSString *)furtherSplitStrings[0]) || ((NSString *)furtherSplitStrings[0]).length == 0)
+            numberForBullet = 1;
+        else if ([scan isAtEnd])
+            numberForBullet = scannedInteger+1;
+        else
+            numberForBullet = 1;
     }
-    stringToInsert = [stringToInsert stringByAppendingString:[NSString stringWithFormat:@"%ld. ",numberForBullet]];
+    
+    if (stringInLine.length > 0 && pressedWhenAtEndOfLine)
+        stringToInsert = [@"\n" stringByAppendingString:stringToInsert];
+    
+    stringToInsert = [stringToInsert stringByAppendingString:[NSString stringWithFormat:@"%ld. ", numberForBullet]];
     
     [self.contentTextView insertText:stringToInsert];
 }
