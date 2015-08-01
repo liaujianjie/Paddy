@@ -1,9 +1,9 @@
 //
 //  PDReminder.h
-//  Paddy
+//  
 //
-//  Created by Jian Jie on 23/7/15.
-//  Copyright (c) 2015 Liau Jian Jie. All rights reserved.
+//  Created by Jian Jie on 1/8/15.
+//
 //
 
 #import <Foundation/Foundation.h>
@@ -13,7 +13,7 @@
 
 @interface PDReminder : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
+@property (nonatomic, retain) NSNumber * localNotificationIdentifier;
 @property (nonatomic, retain) PDNote *note;
 
 @end

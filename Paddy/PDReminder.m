@@ -1,9 +1,9 @@
 //
 //  PDReminder.m
-//  Paddy
+//  
 //
-//  Created by Jian Jie on 23/7/15.
-//  Copyright (c) 2015 Liau Jian Jie. All rights reserved.
+//  Created by Jian Jie on 1/8/15.
+//
 //
 
 #import "PDReminder.h"
@@ -12,7 +12,7 @@
 
 @implementation PDReminder
 
-@dynamic date;
+@dynamic localNotificationIdentifier;
 @dynamic note;
 
 + (NSString *)MR_entityName {

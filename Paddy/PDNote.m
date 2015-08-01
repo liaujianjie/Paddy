@@ -2,7 +2,7 @@
 //  PDNote.m
 //  Paddy
 //
-//  Created by Jian Jie on 23/7/15.
+//  Created by Jian Jie on 1/8/15.
 //  Copyright (c) 2015 Liau Jian Jie. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @dynamic createdDate;
 @dynamic lastModifiedDate;
 @dynamic title;
+@dynamic pinned;
 @dynamic reminders;
 
 + (NSString *)MR_entityName {

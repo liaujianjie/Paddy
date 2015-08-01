@@ -2,7 +2,7 @@
 //  PDNote.h
 //  Paddy
 //
-//  Created by Jian Jie on 23/7/15.
+//  Created by Jian Jie on 1/8/15.
 //  Copyright (c) 2015 Liau Jian Jie. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSDate * createdDate;
 @property (nonatomic, retain) NSDate * lastModifiedDate;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSNumber * pinned;
 @property (nonatomic, retain) NSSet *reminders;
 @end
 
