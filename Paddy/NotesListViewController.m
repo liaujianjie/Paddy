@@ -45,6 +45,8 @@
     searchTextField.font = font;
     
     self.undoToasterVerticalPositionContraint.constant = -50;
+    
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -109,6 +111,7 @@
     // search with one line: 68
     if (!self.searchBar.text || self.searchBar.text.length == 0)
         return 44.0;
+    
     return 44.0;
 }
 
@@ -173,5 +176,5 @@
             buttonView.transform = CGAffineTransformMakeScale(1.0, 1.0);
     }
 }
-
+    
 @end

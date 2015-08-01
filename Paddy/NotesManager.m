@@ -127,6 +127,38 @@
     [MagicalRecord cleanUp];
 }
 
+#pragma mark - Remind
+
+- (void)createReminderForNote:(PDNote *)note withDate:(NSDate *)date {
+    BOOL conflict = true;
+    NSString *identifier;
+    
+    while (conflict == true) {
+        identifier = [NSString stringWithFormat:@"%i", arc4random()];
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"localNotificationIdentifier == %@", identifier];
+        
+        NSArray *objectsWithSameIdentifier = [PDReminder MR_findAllWithPredicate:predicate];
+        
+        if (objectsWithSameIdentifier.count == 0)
+            conflict = false;
+    }
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    
+    notification.fireDate = date;
+    notification.alertBody = note.title;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    PDReminder *reminder = [PDReminder MR_createEntity];
+    
+    reminder.localNotificationIdentifier = [NSNumber numberWithInt:[identifier intValue]];
+    reminder.note = note;
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 #pragma mark - Private Helpers
 
 - (NSString *)_sortByStringFromType:(NotesManagerSortingBy)type

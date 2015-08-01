@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <MagicalRecord/MagicalRecord.h>
 #import "PDNote.h"
+#import "PDReminder.h"
 
 typedef NS_ENUM(NSUInteger, NotesManagerSortingBy)
 {
@@ -45,6 +46,8 @@ typedef NS_ENUM(NSUInteger, NotesManagerSortingOption)
 - (PDNote *)createBlankNote;
 - (void)updateNote:(PDNote *)note withContent:(NSString *)content andTitle:(NSString *)title;
 - (void)deleteNote:(PDNote *)note asynchronously:(BOOL)asynchronously;
+
+- (void)createReminderForNote:(PDNote *)note withDate:(NSDate *)date;
 
 - (void)exit;
 

@@ -400,4 +400,15 @@
     }
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake) {
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        formatter.dateFormat = @"dd/MM/yyyy HH:mm";
+        NSString *dateString = [formatter stringFromDate:[NSDate date]];
+        NSDate *date = [formatter dateFromString:dateString];
+        
+        [[NotesManager sharedNotesManager] createReminderForNote:note withDate:date];
+    }
+}
+
 @end
