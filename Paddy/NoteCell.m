@@ -100,7 +100,7 @@
     if (newNote.title.length != 0)
         self.titleLabel.text = newNote.title;
     else if (newNote.content.length != 0)
-        self.titleLabel.text = newNote.content;
+        self.titleLabel.text = [[TSMarkdownParser paddyDefaultParser] attributedStringFromMarkdown:newNote.content].string;
     else
     {
         self.titleLabel.text = @"Empty note";
@@ -112,7 +112,7 @@
     NSTimeInterval timeSinceDate = -[self.note.createdDate timeIntervalSinceNow];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     if (timeSinceDate > 60*60*24)
-        [formatter setDateFormat:@"d/M/yyyy"];
+        [formatter setDateFormat:@"d MMM yyyy"];
     else
         [formatter setDateFormat:@"h:m"];
     self.timeStampLabel.text = [formatter stringFromDate:newNote.createdDate];

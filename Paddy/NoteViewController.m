@@ -8,7 +8,12 @@
 
 #import "NoteViewController.h"
 
+#define kSecondsToWaitBeforeSave 5.0
+
 @interface NoteViewController ()
+{
+    NSTimer *saveTimer;
+}
 
 @end
 
@@ -29,7 +34,7 @@
     self.contentTextView.allowsEditingTextAttributes = YES;
     
     self.titleTextField.text = note.title;
-    self.contentTextView.text = note.content;
+    self.contentTextView.markdown = note.content;
     
     if (shouldBringUpKeyboard)
         [self.titleTextField becomeFirstResponder];
@@ -51,10 +56,7 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    if (![self.contentTextView.text isEqualToString:note.content])
-        [[NotesManager sharedNotesManager] updateNote:self.note withContent:self.contentTextView.text andTitle:self.titleTextField.text];
-    else if (![self.titleTextField.text isEqualToString:note.title])
-        [[NotesManager sharedNotesManager] updateNote:self.note withContent:self.contentTextView.text andTitle:self.titleTextField.text];
+    [self saveNote];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,6 +89,26 @@
     }];
 }
 
+//- (void)setupInputAccessoryViewInteractiveKeyboardDismissal
+//{
+//    BABFrameObservingInputAccessoryView *inputView = [[BABFrameObservingInputAccessoryView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+//    inputView.userInteractionEnabled = NO;
+//    
+//    self.contentTextView.inputAccessoryView = inputView;
+//    
+//    __weak typeof(self)weakSelf = self;
+//    
+//    inputView.inputAcessoryViewFrameChangedBlock = ^(CGRect frame){
+//        
+//        CGFloat value = CGRectGetHeight(weakSelf.view.frame) - CGRectGetMinY(weakSelf.textField.inputAccessoryView.superview.frame) - CGRectGetHeight(weakSelf.textField.inputAccessoryView.frame);
+//        
+//        weakSelf.toolbarContainerVerticalSpacingConstraint.constant = MAX(0, value);
+//        
+//        [weakSelf.view layoutIfNeeded];
+//        
+//    };
+//}
+
 - (void)updateTimeAgoLabel
 {
     NSString *timeAgo = self.note.lastModifiedDate.timeAgoSinceNow;
@@ -105,13 +127,13 @@
     if (!self.contentTextView.isFirstResponder || !self.contentTextView.attributedText || self.contentTextView.attributedText.length == 0)
         return;
     
-    NSRange selectedRange = self.contentTextView.selectedRange;
+//    NSRange selectedRange = self.contentTextView.selectedRange;
 
     NSDictionary *attributes;
-    if (selectedRange.length == 0)
+//    if (selectedRange.length == 0)
         attributes = [self.contentTextView typingAttributes];
-    else
-        attributes = [self.contentTextView.attributedText attributesAtIndex:selectedRange.location effectiveRange:&selectedRange];
+//    else
+//        attributes = [self.contentTextView.attributedText attributesAtIndex:selectedRange.location effectiveRange:&selectedRange];
     
     if (!attributes)
         return;
@@ -143,6 +165,14 @@
         [self.underlineButton setImage:[UIImage imageNamed:@"editing-underline-muted.png"] forState:UIControlStateNormal];
 }
 
+- (void)saveNote
+{
+    if (![self.contentTextView.markdown isEqualToString:note.content])
+        [[NotesManager sharedNotesManager] updateNote:self.note withContent:self.contentTextView.markdown andTitle:self.titleTextField.text];
+    else if (![self.titleTextField.text isEqualToString:note.title])
+        [[NotesManager sharedNotesManager] updateNote:self.note withContent:self.contentTextView.markdown andTitle:self.titleTextField.text];
+}
+
 #pragma mark - View Button Handlers
 
 - (IBAction)pressedDismiss:(id)sender {
@@ -157,6 +187,9 @@
 }
 
 #pragma mark Editing Button Handlers
+
+// TODO: make tab indents slightly larger (accomodate 2 digits and 1 period)
+// TODO: make tab indents for bullets indent entire paragraph (http://stackoverflow.com/questions/6644501/objective-c-nsattributedstring-inserting-a-bullet-point)
 
 - (IBAction)pressedBulletedList:(id)sender {
     if (!self.contentTextView.isFirstResponder)
@@ -271,6 +304,14 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
     [self updateEditingButtonsForTextAttributes];
+    
+    if (saveTimer)
+        [saveTimer invalidate];
+    saveTimer = [NSTimer scheduledTimerWithTimeInterval:kSecondsToWaitBeforeSave
+                                                 target:self
+                                               selector:@selector(saveNote)
+                                               userInfo:nil
+                                                repeats:NO];
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView
@@ -289,12 +330,12 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    const CGFloat requiredOffsetForDismissal = 150.0;
+    const CGFloat requiredOffsetForDismissal = 80.0;
     const CGFloat textInsetTop = 10.0;
     
     if (scrollView == self.contentTextView)
     {
-        if (scrollView.contentOffset.y < -requiredOffsetForDismissal && !scrollView.isDecelerating)
+        if (scrollView.contentOffset.y < -requiredOffsetForDismissal && scrollView.isDragging)
             [self dismissViewControllerAnimated:YES completion:nil];
         
         if (scrollView.contentOffset.y < 0)

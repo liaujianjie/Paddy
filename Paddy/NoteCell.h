@@ -11,6 +11,8 @@
 #import "DateTools.h"
 #import "UIColor+HexRGB.h"
 #import "NotesManager.h"
+#import "TSMarkdownParser.h"
+#import "TSMarkdownParser+paddyDefaults.h"
 
 @protocol NoteCellDelegate;
 

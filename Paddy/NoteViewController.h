@@ -11,12 +11,16 @@
 #import "NotesManager.h"
 #import "DateTools.h"
 #import "UITextView+selectionHelpers.h"
+#import "BABFrameObservingInputAccessoryView.h"
+#import "NoteTextView.h"
 
 typedef NS_ENUM(NSUInteger, NotesViewAlert)
 {
     NotesViewAlertForEmptyNoteDismissal = 0,
     NotesViewAlertForDeleteConfirmation
 };
+
+@protocol NoteViewControllerTextInterceptionDelegate;
 
 @interface NoteViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
@@ -26,7 +30,7 @@ typedef NS_ENUM(NSUInteger, NotesViewAlert)
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIButton *dismissButton;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet NoteTextView *contentTextView;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
 @property (weak, nonatomic) IBOutlet UIView *separatorLineView;
 
@@ -36,6 +40,7 @@ typedef NS_ENUM(NSUInteger, NotesViewAlert)
 - (IBAction)pressedDismiss:(id)sender;
 - (IBAction)pressedDeleteNote:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *editorToolbar;
 @property (weak, nonatomic) IBOutlet UIButton *bulletedListButton;
 @property (weak, nonatomic) IBOutlet UIButton *numberedListButton;
 @property (weak, nonatomic) IBOutlet UIButton *boldButton;
@@ -49,3 +54,10 @@ typedef NS_ENUM(NSUInteger, NotesViewAlert)
 - (IBAction)pressedUnderline:(id)sender;
 
 @end
+
+//
+//@protocol NoteViewControllerTextInterceptionDelegate <NSObject>
+//
+//- (void)shouldChangeCharacterInS
+//
+//@end

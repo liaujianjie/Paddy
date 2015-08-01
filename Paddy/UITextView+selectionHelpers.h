@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSString+locationHelpers.h"
 
 @interface UITextView (selectionHelpers)
 
-- (NSInteger)lineOfStartOfSelection;
-- (NSInteger)locationOfStartOfSelectionInLine;
+- (NSUInteger)lineOfStartOfSelection;
+- (NSUInteger)locationOfStartOfSelectionInLine;
 
 @end

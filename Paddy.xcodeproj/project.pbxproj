@@ -46,6 +46,8 @@
 		0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */; };
 		0FFD115D1B6D1E700077076C /* PDNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD115C1B6D1E700077076C /* PDNote.m */; };
 		0FFD11601B6D1EDF0077076C /* PDReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD115F1B6D1EDF0077076C /* PDReminder.m */; };
+		0FFD119F1B6D31670077076C /* NSString+locationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD119E1B6D31670077076C /* NSString+locationHelpers.m */; };
+		0FFD11A21B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD11A11B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m */; };
 		23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,10 @@
 		0FFD115C1B6D1E700077076C /* PDNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNote.m; sourceTree = "<group>"; };
 		0FFD115E1B6D1EDF0077076C /* PDReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDReminder.h; sourceTree = "<group>"; };
 		0FFD115F1B6D1EDF0077076C /* PDReminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDReminder.m; sourceTree = "<group>"; };
+		0FFD119D1B6D31670077076C /* NSString+locationHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+locationHelpers.h"; sourceTree = "<group>"; };
+		0FFD119E1B6D31670077076C /* NSString+locationHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+locationHelpers.m"; sourceTree = "<group>"; };
+		0FFD11A01B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TSMarkdownParser+paddyDefaults.h"; sourceTree = "<group>"; };
+		0FFD11A11B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TSMarkdownParser+paddyDefaults.m"; sourceTree = "<group>"; };
 		95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.release.xcconfig"; sourceTree = "<group>"; };
 		C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.debug.xcconfig"; sourceTree = "<group>"; };
 		D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Paddy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +224,10 @@
 				0F7820EA1B6159E6006063F7 /* UIImage+imageWithColor.m */,
 				0F0330FE1B65278B0080879B /* UITextView+selectionHelpers.h */,
 				0F0330FF1B65278B0080879B /* UITextView+selectionHelpers.m */,
+				0FFD119D1B6D31670077076C /* NSString+locationHelpers.h */,
+				0FFD119E1B6D31670077076C /* NSString+locationHelpers.m */,
+				0FFD11A01B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.h */,
+				0FFD11A11B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m */,
 			);
 			name = "Helper Categories";
 			sourceTree = "<group>";
@@ -371,6 +381,7 @@
 				0F56AEC31B6485D700AB3880 /* DatePickerPopupViewController.m in Sources */,
 				0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+displayableString.m in Sources */,
 				0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */,
+				0FFD119F1B6D31670077076C /* NSString+locationHelpers.m in Sources */,
 				0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */,
 				0F0331001B65278B0080879B /* UITextView+selectionHelpers.m in Sources */,
 				0FD601E71B61282E007544AC /* NoteCell.m in Sources */,
@@ -380,6 +391,7 @@
 				0F56AEC61B64892800AB3880 /* QuickDateOptionCell.m in Sources */,
 				0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */,
 				0FFD115D1B6D1E700077076C /* PDNote.m in Sources */,
+				0FFD11A21B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m in Sources */,
 				0FD601EA1B612C67007544AC /* NoteViewController.m in Sources */,
 				0F3F0B231B5F8C0700F0A09A /* main.m in Sources */,
 			);

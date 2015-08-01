@@ -17,6 +17,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    [[UITextField appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
+//    [[UITextView appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
+    
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexNum:0xFBFBFB alpha:1.0]];
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithHexNum:0x037AFF alpha:1.0]];
