@@ -447,19 +447,6 @@
                                             </connections>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" id="QSX-Kh-6LZ">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ew9-Zr-R50">
-                                            <rect key="frame" x="45" y="-28" width="24" height="24"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
-                                            <state key="normal" image="editing-underline-muted.png">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="pressedUnderline:" destination="pYv-8I-oKi" eventType="touchUpInside" id="toP-SD-65A"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -501,7 +488,6 @@
                         <outlet property="timeStampLabel" destination="7FU-wU-a1i" id="7xs-6F-cbt"/>
                         <outlet property="titleTextField" destination="VKO-5m-BgA" id="wRw-6t-LTK"/>
                         <outlet property="toolbarBottomSpacingConstraint" destination="Bpk-Xb-kmB" id="kWH-dl-lGw"/>
-                        <outlet property="underlineButton" destination="ew9-Zr-R50" id="g0K-n2-0Jn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSl-6z-c7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -515,7 +501,6 @@
         <image name="editing-bulletedlist-muted.png" width="64" height="64"/>
         <image name="editing-italic-muted.png" width="64" height="64"/>
         <image name="editing-numberedlist-muted.png" width="64" height="64"/>
-        <image name="editing-underline-muted.png" width="64" height="64"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
