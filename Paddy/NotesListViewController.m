@@ -158,6 +158,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [self.searchBar resignFirstResponder];
+    
     const CGFloat requiredOffsetForNewNote = 150.0;
     if (scrollView == self.notesListTableView)
     {
