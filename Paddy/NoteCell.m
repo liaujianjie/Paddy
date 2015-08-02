@@ -28,6 +28,13 @@
 //    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 //}
 
+- (void)setupContentTextView
+{
+    self.contentTextView.contentInset = UIEdgeInsetsZero;
+    self.contentTextView.textContainerInset = UIEdgeInsetsZero;
+    self.contentTextView.textContainer.lineFragmentPadding = 0;
+}
+
 - (void)setupSwipeGesture
 {
     //    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
@@ -42,7 +49,7 @@
                              mode:MCSwipeTableViewCellModeSwitch
                             state:MCSwipeTableViewCellState3
                   completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-                      [self.swipeGestureDelegate swipedToCreateReminder:self];
+//                      [self.swipeGestureDelegate swipedToCreateReminder:self];
                   }];
     [self setSwipeGestureWithView:[self cellDeleteView]
                             color:redColor
@@ -86,8 +93,9 @@
 - (instancetype)init
 {
     self = [[NSBundle mainBundle] loadNibNamed:@"NoteCell" owner:self options:nil][0];
-    self.contentLabel.hidden = YES;
+    self.contentTextView.hidden = YES;
     
+    [self setupContentTextView];
     [self setupSwipeGesture];
     
     return self;
@@ -123,9 +131,59 @@
     self->searchTerm = newSearchTerm;
     
     if (!searchTerm || searchTerm.length == 0)
-        self.contentLabel.hidden = YES;
+    {
+        self.contentTextView.hidden = YES;
+        self.contentTextViewVerticalSpacingConstraint.constant = 0.0;
+    }
     else
-        self.contentLabel.hidden = NO;
+    {
+        NSAttributedString *attributedString = [[TSMarkdownParser paddyDefaultParser] attributedStringFromMarkdown:self.note.content];
+        NSString *rawString = attributedString.string;
+        self.contentTextView.hidden = NO;
+        self.contentTextView.text = rawString;
+//        self.contentTextView.font = [UIFont fontWithName:@"HelveticaNeue-light" size:14.0];
+//        self.contentTextView.text enu
+        NSError *error;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:newSearchTerm
+                                                                               options:NSRegularExpressionCaseInsensitive
+                                                                                 error:&error];
+        if (!error)
+        {
+            NSRange entireRange = NSMakeRange(0, rawString.length);
+            NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:rawString];
+            [mutableAttributedString addAttribute:NSFontAttributeName
+                                            value:[UIFont fontWithName:@"HelveticaNeue-light" size:14.0]
+                                            range:entireRange];
+            [mutableAttributedString addAttribute:NSForegroundColorAttributeName
+                                            value:[UIColor colorWithHexNum:0x535353
+                                                                     alpha:1.0]
+                                            range:entireRange];
+            __block NSRange firstLocation = NSMakeRange(0, 0);
+            [regex enumerateMatchesInString:rawString
+                                    options:0
+                                      range:entireRange
+                                 usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                     [mutableAttributedString addAttribute:NSBackgroundColorAttributeName
+                                                                     value:[UIColor colorWithHexNum:0xfee98d alpha:1.0]
+                                                                     range:result.range];
+                                     if (firstLocation.length == 0)
+                                         firstLocation = result.range;
+                                 }];
+            
+            self.contentTextView.attributedText = mutableAttributedString;
+            [self.contentTextView scrollRangeToVisible:firstLocation];
+//            if (self.contentTextView.contentOffset.y == 0)
+//                [self.contentTextView setContentOffset:CGPointMake(0.0,
+//                                                                   self.contentTextView.contentOffset.y+4.0)];
+//            NSLog(@"%f",self.contentTextView.font.lineHeight);
+        }
+        self.contentTextViewVerticalSpacingConstraint.constant = 4.0;
+    }
+}
+
++ (CGFloat)heightForCellWithSearchTerm:(NSString *)searchTerm
+{
+    return 12.0*2 + 19.0 + 4.0 + 16.52*3.0 + 2.0;
 }
 
 @end

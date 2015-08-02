@@ -6,46 +6,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NotesCell" rowHeight="71" id="ZWv-h9-z2D" customClass="NoteCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NotesCell" rowHeight="96" id="ZWv-h9-z2D" customClass="NoteCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZWv-h9-z2D" id="OVx-AX-w26">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="3m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdJ-PX-dw0">
-                        <rect key="frame" x="264.5" y="12" width="22.5" height="19"/>
+                        <rect key="frame" x="264" y="12" width="22.5" height="19"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                         <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="0.35000000000000003" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb4-Si-eG2">
-                        <rect key="frame" x="15" y="39" width="272" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="17" id="0pV-Fi-Lks"/>
-                        </constraints>
-                        <attributedString key="attributedText">
-                            <fragment content="...sometimes William ">
-                                <attributes>
-                                    <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                </attributes>
-                            </fragment>
-                            <fragment content="pretends">
-                                <attributes>
-                                    <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                </attributes>
-                            </fragment>
-                            <fragment content=" to type actual...">
-                                <attributes>
-                                    <color key="NSColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="14" name="HelveticaNeue-Light"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Lorem Ipsum Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iex-Mk-5Wq">
@@ -54,25 +24,35 @@
                         <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwR-Yg-y34">
+                        <rect key="frame" x="15" y="35" width="272" height="45.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                        <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wb4-Si-eG2" firstAttribute="leading" secondItem="OVx-AX-w26" secondAttribute="leading" constant="15" id="8xr-1H-AWe"/>
+                    <constraint firstItem="RwR-Yg-y34" firstAttribute="leading" secondItem="OVx-AX-w26" secondAttribute="leading" constant="15" id="0Jw-KZ-DQv"/>
+                    <constraint firstAttribute="trailing" secondItem="RwR-Yg-y34" secondAttribute="trailing" id="2DF-eU-OD1"/>
                     <constraint firstItem="jdJ-PX-dw0" firstAttribute="leading" secondItem="Iex-Mk-5Wq" secondAttribute="trailing" constant="8" id="It7-JS-STl"/>
-                    <constraint firstAttribute="trailing" secondItem="wb4-Si-eG2" secondAttribute="trailing" id="JtI-mk-JBv"/>
+                    <constraint firstItem="RwR-Yg-y34" firstAttribute="top" secondItem="Iex-Mk-5Wq" secondAttribute="bottom" constant="4" id="OIu-lY-ZSH"/>
                     <constraint firstItem="jdJ-PX-dw0" firstAttribute="top" secondItem="OVx-AX-w26" secondAttribute="top" constant="12" id="SSw-gw-X9w"/>
+                    <constraint firstAttribute="bottom" secondItem="RwR-Yg-y34" secondAttribute="bottom" constant="12" id="Ygw-B2-nlB"/>
                     <constraint firstAttribute="trailing" secondItem="jdJ-PX-dw0" secondAttribute="trailing" id="bax-Ua-tvi"/>
-                    <constraint firstItem="wb4-Si-eG2" firstAttribute="top" secondItem="jdJ-PX-dw0" secondAttribute="bottom" constant="8" id="gha-eS-57n"/>
                     <constraint firstItem="Iex-Mk-5Wq" firstAttribute="top" secondItem="OVx-AX-w26" secondAttribute="top" constant="12" id="mQu-Z4-I82"/>
                     <constraint firstItem="Iex-Mk-5Wq" firstAttribute="leading" secondItem="OVx-AX-w26" secondAttribute="leading" constant="15" id="sPs-jh-hUr"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.98431372549999996" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="contentLabel" destination="wb4-Si-eG2" id="mPm-kO-xT2"/>
+                <outlet property="contentTextView" destination="RwR-Yg-y34" id="deT-ch-Muw"/>
+                <outlet property="contentTextViewVerticalSpacingConstraint" destination="OIu-lY-ZSH" id="3Qh-gk-QRP"/>
                 <outlet property="timeStampLabel" destination="jdJ-PX-dw0" id="SQE-JE-PRj"/>
                 <outlet property="titleLabel" destination="Iex-Mk-5Wq" id="0vI-E8-5Gp"/>
             </connections>
-            <point key="canvasLocation" x="636" y="214.5"/>
+            <point key="canvasLocation" x="636" y="226.5"/>
         </tableViewCell>
     </objects>
 </document>

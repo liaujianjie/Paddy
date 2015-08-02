@@ -20,12 +20,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeStampLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentTextView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentTextViewVerticalSpacingConstraint;
 
 @property (nonatomic, weak) id<NoteCellDelegate> swipeGestureDelegate;
 @property (nonatomic, strong) PDNote *note;
 @property (nonatomic, strong) NSString *searchTerm;
 @property (nonatomic, strong) NSTimer *timeLabelRefreshTimer;
+
++ (CGFloat)heightForCellWithSearchTerm:(NSString *)searchTerm;
 
 @end
 
