@@ -94,6 +94,7 @@
 //    cell = [[NoteCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kNotesCellIdentifier];
     cell = [[NoteCell alloc] init];
     cell.note = note;
+    cell.searchTerm = self.searchBar.text;
     cell.swipeGestureDelegate = self;
     
     return cell;
@@ -111,8 +112,7 @@
     // search with one line: 68
     if (!self.searchBar.text || self.searchBar.text.length == 0)
         return 44.0;
-    
-    return 44.0;
+    return [NoteCell heightForCellWithSearchTerm:self.searchBar.text];
 }
 
 - (NSArray *)notesFromSearch
@@ -158,6 +158,8 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    [self.searchBar resignFirstResponder];
+    
     const CGFloat requiredOffsetForNewNote = 150.0;
     if (scrollView == self.notesListTableView)
     {
