@@ -132,6 +132,8 @@
                                                                         withString:@"*"
                                                                            options:0
                                                                              range:NSMakeRange(0, bulletString.length)]];
+        else
+            [newSplitString addObject:string];
     }
     
     self->markdown = [newSplitString componentsJoinedByString:@"\n"];
