@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupTableViewForKeyboardNotifications];
     
     [NotesManager sharedNotesManager].interfaceRefreshDelegate = self;
     
@@ -49,12 +50,6 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -74,6 +69,29 @@
         destination.note = [[NotesManager sharedNotesManager] createBlankNote];
         destination.shouldBringUpKeyboard = YES;
     }
+}
+
+- (void)setupTableViewForKeyboardNotifications {
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *notification) {
+                                                      id _obj = [notification.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey];
+                                                      CGRect _keyboardFrame = CGRectNull;
+                                                      if ([_obj respondsToSelector:@selector(getValue:)]) [_obj getValue:&_keyboardFrame];
+                                                      [UIView animateWithDuration:0.25f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                                                          self.notesListTableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, _keyboardFrame.size.height, 0.0);
+                                                      } completion:nil];
+                                                  }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillHideNotification
+                                                      object:nil
+                                                       queue:nil
+                                                  usingBlock:^(NSNotification *notification) {
+                                                      [UIView animateWithDuration:0.25f delay:0.f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                                                          self.notesListTableView.contentInset = UIEdgeInsetsZero;
+                                                      } completion:nil];
+                                                  }];
 }
 
 #pragma mark - NotesManager Delegate
@@ -152,6 +170,11 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     [self.notesListTableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
 }
 
 #pragma mark - UIScrollView Delegate
