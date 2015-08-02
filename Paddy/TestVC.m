@@ -55,18 +55,16 @@
     
     NSString *identifier = [NSString stringWithFormat:@"%@", reminder.localNotificationIdentifier];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"userInfo.Key == %@", identifier];
+    
     NSArray *notificationArray = [[[UIApplication sharedApplication] scheduledLocalNotifications] filteredArrayUsingPredicate:predicate];
     
-    if (notificationArray.count > 0) {
-        UILocalNotification *notification = [notificationArray objectAtIndex:0];
-        
-        NSDateFormatter *f = [[NSDateFormatter alloc] init];
-        f.dateFormat = @"dd/MM/yyyy HH:mm";
-        NSString *date = [f stringFromDate:notification.fireDate];
-        cell.dateLabel.text = date;
-    } else {
-        cell.dateLabel.text = @"Notification expired";
-    }
+    UILocalNotification *notification = [notificationArray objectAtIndex:0];
+    
+    NSDateFormatter *f = [[NSDateFormatter alloc] init];
+    f.dateFormat = @"dd/MM/yyyy HH:mm";
+    NSString *date = [f stringFromDate:notification.fireDate];
+    
+    cell.dateLabel.text = date;
     
     return cell;
 }
