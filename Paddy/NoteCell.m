@@ -95,6 +95,9 @@
     self = [[NSBundle mainBundle] loadNibNamed:@"NoteCell" owner:self options:nil][0];
     self.contentTextView.hidden = YES;
     
+    self.contentTextView.text = @"";
+    self.titleLabel.text = @"";
+    
     [self setupContentTextView];
     [self setupSwipeGesture];
     
@@ -112,7 +115,7 @@
     else
     {
         self.titleLabel.text = @"Empty note";
-        self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Italic" size:16.0];
+        self.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
         self.titleLabel.textColor = [UIColor colorWithHexNum:0x535353 alpha:0.5];
     }
 //    self.timeStampLabel.text = newNote.lastModifiedDate.shortTimeAgoSinceNow;
@@ -137,45 +140,55 @@
     }
     else
     {
-        NSAttributedString *attributedString = [[TSMarkdownParser paddyDefaultParser] attributedStringFromMarkdown:self.note.content];
-        NSString *rawString = attributedString.string;
         self.contentTextView.hidden = NO;
-        self.contentTextView.text = rawString;
-//        self.contentTextView.font = [UIFont fontWithName:@"HelveticaNeue-light" size:14.0];
-//        self.contentTextView.text enu
-        NSError *error;
-        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:newSearchTerm
-                                                                               options:NSRegularExpressionCaseInsensitive
-                                                                                 error:&error];
-        if (!error)
+        if (!self.note.content || self.note.content.length == 0)
         {
-            NSRange entireRange = NSMakeRange(0, rawString.length);
-            NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:rawString];
+            NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:@"No content"];
+            [mutableAttributedString addAttribute:NSForegroundColorAttributeName
+                                            value:[UIColor colorWithHexNum:0x535353 alpha:0.5]
+                                            range:NSMakeRange(0, mutableAttributedString.length)];
             [mutableAttributedString addAttribute:NSFontAttributeName
                                             value:[UIFont fontWithName:@"HelveticaNeue-light" size:14.0]
-                                            range:entireRange];
-            [mutableAttributedString addAttribute:NSForegroundColorAttributeName
-                                            value:[UIColor colorWithHexNum:0x535353
-                                                                     alpha:1.0]
-                                            range:entireRange];
-            __block NSRange firstLocation = NSMakeRange(0, 0);
-            [regex enumerateMatchesInString:rawString
-                                    options:0
-                                      range:entireRange
-                                 usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-                                     [mutableAttributedString addAttribute:NSBackgroundColorAttributeName
-                                                                     value:[UIColor colorWithHexNum:0xfee98d alpha:1.0]
-                                                                     range:result.range];
-                                     if (firstLocation.length == 0)
-                                         firstLocation = result.range;
-                                 }];
-            
+                                            range:NSMakeRange(0, mutableAttributedString.length)];
             self.contentTextView.attributedText = mutableAttributedString;
-            [self.contentTextView scrollRangeToVisible:firstLocation];
-//            if (self.contentTextView.contentOffset.y == 0)
-//                [self.contentTextView setContentOffset:CGPointMake(0.0,
-//                                                                   self.contentTextView.contentOffset.y+4.0)];
-//            NSLog(@"%f",self.contentTextView.font.lineHeight);
+//            NSLog(@"%@")
+        }
+        else
+        {
+            NSAttributedString *attributedString = [[TSMarkdownParser paddyDefaultParser] attributedStringFromMarkdown:self.note.content];
+            NSString *rawString = attributedString.string;
+            self.contentTextView.text = rawString;
+            
+            NSError *error;
+            NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:newSearchTerm
+                                                                                   options:NSRegularExpressionCaseInsensitive
+                                                                                     error:&error];
+            if (!error)
+            {
+                NSRange entireRange = NSMakeRange(0, rawString.length);
+                NSMutableAttributedString *mutableAttributedString = [[NSMutableAttributedString alloc] initWithString:rawString];
+                [mutableAttributedString addAttribute:NSFontAttributeName
+                                                value:[UIFont fontWithName:@"HelveticaNeue-light" size:14.0]
+                                                range:entireRange];
+                [mutableAttributedString addAttribute:NSForegroundColorAttributeName
+                                                value:[UIColor colorWithHexNum:0x535353
+                                                                         alpha:1.0]
+                                                range:entireRange];
+                __block NSRange firstLocation = NSMakeRange(0, 0);
+                [regex enumerateMatchesInString:rawString
+                                        options:0
+                                          range:entireRange
+                                     usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+                                         [mutableAttributedString addAttribute:NSBackgroundColorAttributeName
+                                                                         value:[UIColor colorWithHexNum:0xfee98d alpha:1.0]
+                                                                         range:result.range];
+                                         if (firstLocation.length == 0)
+                                             firstLocation = result.range;
+                                     }];
+                
+                self.contentTextView.attributedText = mutableAttributedString;
+                [self.contentTextView scrollRangeToVisible:firstLocation];
+            }
         }
         self.contentTextViewVerticalSpacingConstraint.constant = 4.0;
     }
