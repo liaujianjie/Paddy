@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 @class PDReminder;
 
@@ -22,6 +23,8 @@
 @end
 
 @interface PDNote (CoreDataGeneratedAccessors)
+
+- (NSSet *)allReminders;
 
 - (void)addRemindersObject:(PDReminder *)value;
 - (void)removeRemindersObject:(PDReminder *)value;

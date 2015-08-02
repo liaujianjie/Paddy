@@ -127,16 +127,16 @@
     [MagicalRecord cleanUp];
 }
 
-#pragma mark - Remind
+#pragma mark - Reminder Handler
 
 - (void)createReminderForNote:(PDNote *)note withDate:(NSDate *)date {
     BOOL conflict = true;
-    NSString *identifier;
+    int identifier = 0;
     
     while (conflict == true) {
-        identifier = [NSString stringWithFormat:@"%i", arc4random()];
+        identifier = arc4random();
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"localNotificationIdentifier == %@", identifier];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"localNotificationIdentifier == %ld", identifier];
         
         NSArray *objectsWithSameIdentifier = [PDReminder MR_findAllWithPredicate:predicate];
         
@@ -148,15 +148,22 @@
     
     notification.fireDate = date;
     notification.alertBody = note.title;
+    notification.userInfo = @{@"Key":[NSString stringWithFormat:@"%d",identifier]};
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     
     PDReminder *reminder = [PDReminder MR_createEntity];
     
-    reminder.localNotificationIdentifier = [NSNumber numberWithInt:[identifier intValue]];
-    reminder.note = note;
+    reminder.localNotificationIdentifier = [NSNumber numberWithInt:identifier];
     
+    NSLog(@"%@ & %d",reminder.localNotificationIdentifier,identifier);
+//    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [note addRemindersObject:reminder];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
+- (void)updateReminder:(PDReminder *)reminder withAlert:(NSString *)message withDate:(NSDate *)date {
+    
 }
 
 #pragma mark - Private Helpers

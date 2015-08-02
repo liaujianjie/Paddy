@@ -49,6 +49,8 @@
 		0FFD119F1B6D31670077076C /* NSString+locationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD119E1B6D31670077076C /* NSString+locationHelpers.m */; };
 		0FFD11A21B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD11A11B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m */; };
 		23937D61386CD68509FB0979 /* libPods-Paddy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */; };
+		BA56D8271B6DF8A7002A6254 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA56D8261B6DF8A7002A6254 /* TestVC.m */; };
+		BA56D82A1B6DFCDE002A6254 /* ReminderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA56D8291B6DFCDE002A6254 /* ReminderCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,10 @@
 		0FFD11A01B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TSMarkdownParser+paddyDefaults.h"; sourceTree = "<group>"; };
 		0FFD11A11B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TSMarkdownParser+paddyDefaults.m"; sourceTree = "<group>"; };
 		95B8355FCE789119F4F57224 /* Pods-Paddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.release.xcconfig"; sourceTree = "<group>"; };
+		BA56D8251B6DF8A7002A6254 /* TestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		BA56D8261B6DF8A7002A6254 /* TestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		BA56D8281B6DFCDE002A6254 /* ReminderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderCell.h; sourceTree = "<group>"; };
+		BA56D8291B6DFCDE002A6254 /* ReminderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderCell.m; sourceTree = "<group>"; };
 		C29FF0A5CE023A3E1BB9B901 /* Pods-Paddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Paddy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Paddy/Pods-Paddy.debug.xcconfig"; sourceTree = "<group>"; };
 		D981BFC8454E26ADA0AD6334 /* libPods-Paddy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Paddy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,6 +183,10 @@
 				0F3F0B201B5F8C0700F0A09A /* Supporting Files */,
 				0F7820F71B6191FA006063F7 /* Helper Categories */,
 				0F7820EC1B61631F006063F7 /* Resources */,
+				BA56D8251B6DF8A7002A6254 /* TestVC.h */,
+				BA56D8261B6DF8A7002A6254 /* TestVC.m */,
+				BA56D8281B6DFCDE002A6254 /* ReminderCell.h */,
+				BA56D8291B6DFCDE002A6254 /* ReminderCell.m */,
 			);
 			path = Paddy;
 			sourceTree = "<group>";
@@ -380,6 +390,7 @@
 				0F7820EB1B6159E6006063F7 /* UIImage+imageWithColor.m in Sources */,
 				0F56AEC31B6485D700AB3880 /* DatePickerPopupViewController.m in Sources */,
 				0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+displayableString.m in Sources */,
+				BA56D82A1B6DFCDE002A6254 /* ReminderCell.m in Sources */,
 				0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */,
 				0FFD119F1B6D31670077076C /* NSString+locationHelpers.m in Sources */,
 				0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */,
@@ -389,6 +400,7 @@
 				0FFD11601B6D1EDF0077076C /* PDReminder.m in Sources */,
 				0FD601DB1B6119CE007544AC /* Paddy.xcdatamodeld in Sources */,
 				0F56AEC61B64892800AB3880 /* QuickDateOptionCell.m in Sources */,
+				BA56D8271B6DF8A7002A6254 /* TestVC.m in Sources */,
 				0F3F0B261B5F8C0700F0A09A /* AppDelegate.m in Sources */,
 				0FFD115D1B6D1E700077076C /* PDNote.m in Sources */,
 				0FFD11A21B6D4EE50077076C /* TSMarkdownParser+paddyDefaults.m in Sources */,

@@ -9,7 +9,7 @@
         <relationship name="reminders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Reminder" inverseName="note" inverseEntity="Reminder" syncable="YES"/>
     </entity>
     <entity name="Reminder" representedClassName="PDReminder" syncable="YES">
-        <attribute name="localNotificationIdentifier" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="localNotificationIdentifier" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="note" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Note" inverseName="reminders" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>

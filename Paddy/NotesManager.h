@@ -48,6 +48,7 @@ typedef NS_ENUM(NSUInteger, NotesManagerSortingOption)
 - (void)deleteNote:(PDNote *)note asynchronously:(BOOL)asynchronously;
 
 - (void)createReminderForNote:(PDNote *)note withDate:(NSDate *)date;
+- (void)deleteReminder:(PDReminder *)reminder;
 
 - (void)exit;
 
