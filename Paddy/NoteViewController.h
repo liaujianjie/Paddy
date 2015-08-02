@@ -21,8 +21,6 @@ typedef NS_ENUM(NSUInteger, NotesViewAlert)
     NotesViewAlertForDeleteConfirmation
 };
 
-@protocol NoteViewControllerTextInterceptionDelegate;
-
 @interface NoteViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, retain) PDNote *note;
@@ -55,10 +53,3 @@ typedef NS_ENUM(NSUInteger, NotesViewAlert)
 - (IBAction)pressedUnderline:(id)sender;
 
 @end
-
-//
-//@protocol NoteViewControllerTextInterceptionDelegate <NSObject>
-//
-//- (void)shouldChangeCharacterInS
-//
-//@end

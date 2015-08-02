@@ -55,6 +55,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.titleTextField resignFirstResponder];
+    [self.contentTextView resignFirstResponder];
     
     [self saveNote];
 }
