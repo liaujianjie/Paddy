@@ -17,6 +17,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+//    [self.window makeKeyAndDisplay];
+    
+    // always call after makeKeyAndDisplay.
+    #if TARGET_IPHONE_SIMULATOR
+        [[DCIntrospect sharedIntrospector] start];
+    #endif
+    
     [[UITextField appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
 //    [[UITextView appearance] setKeyboardAppearance:UIKeyboardAppearanceDark];
     

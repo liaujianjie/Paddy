@@ -8,5 +8,6 @@ target 'Paddy' do
   pod 'MCSwipeTableViewCell', '~> 2.1'
   pod 'TSMarkdownParser', '~> 1.0'
   pod 'BABFrameObservingInputAccessoryView', '~> 0.1'
+  pod 'DCIntrospect-ARC', '~> 0.0'
 end
 

@@ -11,6 +11,7 @@
 #import "NotesManager.h"
 #import "UIColor+HexRGB.h"
 #import "UIImage+imageWithColor.h"
+#import <DCIntrospect-ARC/DCIntrospect.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
