@@ -262,7 +262,7 @@
     if (stringInLine.length > 0 && pressedWhenAtEndOfLine)
         stringToInsert = [@"\n" stringByAppendingString:stringToInsert];
     
-    stringToInsert = [stringToInsert stringByAppendingString:[NSString stringWithFormat:@"%ld. ", numberForBullet]];
+    stringToInsert = [stringToInsert stringByAppendingString:[NSString stringWithFormat:@"%ld. ", (long)numberForBullet]];
     
     [self.contentTextView insertText:stringToInsert];
 }
