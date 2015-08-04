@@ -176,8 +176,20 @@
 
 - (void)swipedToPinCell:(NoteCell *)cell
 {
-    [[[UIAlertView alloc] initWithTitle:@"Pinned!"
-                               message:[NSString stringWithFormat:@"%@",cell]
+    PDNote *note = cell.note;
+    
+    BOOL pinned = cell.note.pinned.boolValue;
+    
+    if (pinned) {
+        note.pinned = [NSNumber numberWithBool:false];
+    }
+    else
+        note.pinned = [NSNumber numberWithBool:true];
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    
+    [[[UIAlertView alloc] initWithTitle:@"Updated!"
+                               message:[NSString stringWithFormat:@"%@, %@",cell.titleLabel.text, cell.note.pinned]
                               delegate:self
                      cancelButtonTitle:@"Close"
                      otherButtonTitles:nil] show];
