@@ -12,6 +12,7 @@
 #import "NotesManager.h"
 #import "NoteCell.h"
 #import "NoteViewController.h"
+#import "TestVC.h"
 
 @interface NotesListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate, NoteCellDelegate, NotesManagerRefreshDelegate>
 

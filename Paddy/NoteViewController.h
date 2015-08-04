@@ -13,7 +13,6 @@
 #import "UITextView+selectionHelpers.h"
 #import "BABFrameObservingInputAccessoryView.h"
 #import "NoteTextView.h"
-#import "TestVC.h"
 
 typedef NS_ENUM(NSUInteger, NotesViewAlert)
 {

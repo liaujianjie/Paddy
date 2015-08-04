@@ -50,6 +50,39 @@
     value.note = self;
 }
 
+- (void)createReminderForNoteWithDate:(NSDate *)date {
+    BOOL conflict = true;
+    int identifier = 0;
+    
+    while (conflict == true) {
+        identifier = arc4random();
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"localNotificationIdentifier == %ld", identifier];
+        
+        NSArray *objectsWithSameIdentifier = [PDReminder MR_findAllWithPredicate:predicate];
+        
+        if (objectsWithSameIdentifier.count == 0)
+            conflict = false;
+    }
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    
+    notification.fireDate = date;
+    notification.alertBody = self.title;
+    notification.userInfo = @{@"Key":[NSString stringWithFormat:@"%d",identifier]};
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    PDReminder *reminder = [PDReminder MR_createEntity];
+    
+    reminder.localNotificationIdentifier = [NSNumber numberWithInt:identifier];
+    
+    NSLog(@"%@ & %d",reminder.localNotificationIdentifier,identifier);
+    //    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [self addRemindersObject:reminder];
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 - (void)removeRemindersObject:(PDReminder *)value
 {
     NSString *identifier = [NSString stringWithFormat:@"%@", value.localNotificationIdentifier]; // need or cant find.
@@ -67,6 +100,8 @@
     [value MR_deleteEntity];
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
+
+
 
 - (void)addReminders:(NSSet *)values
 {

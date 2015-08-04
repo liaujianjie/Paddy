@@ -56,7 +56,7 @@
                              mode:MCSwipeTableViewCellModeSwitch
                             state:MCSwipeTableViewCellState3
                   completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-//                      [self.swipeGestureDelegate swipedToCreateReminder:self];
+                      [self.swipeGestureDelegate swipedToCreateReminder:self];
                   }];
     [self setSwipeGestureWithView:[self cellDeleteView]
                             color:redColor

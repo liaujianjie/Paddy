@@ -13,6 +13,9 @@
 
 //#fee98d
 @interface NotesListViewController ()
+{
+    PDNote *noteToSend;
+}
 
 @end
 
@@ -68,6 +71,11 @@
         NoteViewController *destination = (NoteViewController *)segue.destinationViewController;
         destination.note = [[NotesManager sharedNotesManager] createBlankNote];
         destination.shouldBringUpKeyboard = YES;
+    }
+    else if ([segue.identifier isEqualToString:@"TestVC"])
+    {
+        TestVC *destination = (TestVC *)segue.destinationViewController;
+        destination.note = noteToSend;
     }
 }
 
@@ -154,7 +162,8 @@
 
 - (void)swipedToCreateReminder:(NoteCell *)cell
 {
-    [self performSegueWithIdentifier:@"PopReminderDatePicker" sender:self];
+    noteToSend = cell.note;
+    [self performSegueWithIdentifier:@"TestVC" sender:self];
 }
 
 - (void)swipedToDeleteNoteAtCell:(NoteCell *)cell
@@ -210,5 +219,9 @@
             buttonView.transform = CGAffineTransformMakeScale(1.0, 1.0);
     }
 }
+
+#pragma mark - Navigation
+
+
     
 @end

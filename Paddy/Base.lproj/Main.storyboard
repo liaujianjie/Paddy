@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aSX-5h-TM1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F19a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aSX-5h-TM1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -116,7 +116,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Foq-Sy-Gjc"/>
                         <view key="titleView" contentMode="scaleToFill" id="7iB-id-e3R">
-                            <rect key="frame" x="49.5" y="5.5" width="220" height="33"/>
+                            <rect key="frame" x="50" y="6" width="220" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7S-nU-3og">
@@ -150,6 +150,7 @@
                         <segue destination="pYv-8I-oKi" kind="presentation" identifier="GoToExistingNote" id="Ldc-BM-MGu"/>
                         <segue destination="pYv-8I-oKi" kind="presentation" identifier="GoToNewNote" id="G0Y-ig-Qvm"/>
                         <segue destination="ifq-ts-Ehl" kind="presentation" identifier="PopReminderDatePicker" id="7kJ-kx-IMk"/>
+                        <segue destination="dDm-FQ-Lw1" kind="show" identifier="TestVC" id="WPL-YA-XUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -488,7 +489,6 @@
                         <outlet property="timeStampLabel" destination="7FU-wU-a1i" id="7xs-6F-cbt"/>
                         <outlet property="titleTextField" destination="VKO-5m-BgA" id="wRw-6t-LTK"/>
                         <outlet property="toolbarBottomSpacingConstraint" destination="Bpk-Xb-kmB" id="kWH-dl-lGw"/>
-                        <segue destination="dDm-FQ-Lw1" kind="show" identifier="SetReminder" id="gQy-Td-bOA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSl-6z-c7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,13 +520,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Identifier" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFq-T7-6dO">
                                                     <rect key="frame" x="14" y="8" width="292" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-nM-7Yg">
                                                     <rect key="frame" x="14" y="30" width="298" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

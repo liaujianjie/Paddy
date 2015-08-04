@@ -38,7 +38,7 @@
     dateFormatter.dateFormat = @"dd/MM/yyyy HH:mm";
     NSString *formattedString = [dateFormatter stringFromDate:unformatted];
     NSDate *formattedDate = [dateFormatter dateFromString:formattedString];
-    [[NotesManager sharedNotesManager] createReminderForNote:note withDate:formattedDate];
+    [note createReminderForNoteWithDate:formattedDate];
     [self.tableView reloadData];
 }
 

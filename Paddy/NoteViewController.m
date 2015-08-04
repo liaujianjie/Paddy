@@ -402,17 +402,4 @@
     }
 }
 
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    if (motion == UIEventSubtypeMotionShake) {
-        [self performSegueWithIdentifier:@"SetReminder" sender:self];
-    }
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"SetReminder"]) {
-        TestVC *destination = segue.destinationViewController;
-        destination.note = note;
-    }
-}
-
 @end

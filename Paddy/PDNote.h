@@ -28,6 +28,7 @@
 
 - (void)addRemindersObject:(PDReminder *)value;
 - (void)removeRemindersObject:(PDReminder *)value;
+- (void)createReminderForNoteWithDate:(NSDate *)date;
 - (void)addReminders:(NSSet *)values;
 - (void)removeReminders:(NSSet *)values;
 
