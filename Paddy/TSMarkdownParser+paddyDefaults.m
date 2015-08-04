@@ -8,6 +8,8 @@
 
 #import "TSMarkdownParser+paddyDefaults.h"
 
+#define kNormalFontSize 17.0
+
 @implementation TSMarkdownParser (paddyDefaults)
 
 + (TSMarkdownParser *)paddyDefaultParser
@@ -35,6 +37,50 @@
     
     return parser;
 }
+
+#pragma mark - Fonts
+
+- (UIFont *)fontForNormal
+{
+    UIFontDescriptor *descriptor = [UIFontDescriptor fontDescriptorWithName:@"HelveticaNeue-light" size:kNormalFontSize];
+    descriptor = [descriptor fontDescriptorWithSymbolicTraits:0];
+    UIFont *font = [UIFont fontWithDescriptor:descriptor size:kNormalFontSize];
+    return font;
+}
+
+- (UIFont *)fontForBold
+{
+    UIFontDescriptor *descriptor = [UIFontDescriptor fontDescriptorWithName:@"HelveticaNeue-medium" size:kNormalFontSize];
+    descriptor = [descriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold];
+    UIFont *font = [UIFont fontWithDescriptor:descriptor size:kNormalFontSize];
+    return font;
+}
+
+- (UIFont *)fontForItalic
+{
+    UIFontDescriptor *descriptor = [UIFontDescriptor fontDescriptorWithName:@"HelveticaNeue-italic" size:kNormalFontSize];
+    descriptor = [descriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitItalic];
+    UIFont *font = [UIFont fontWithDescriptor:descriptor size:kNormalFontSize];
+    return font;
+}
+
+- (UIFont *)fontForBoldItalic
+{
+    UIFontDescriptor *descriptor = [UIFontDescriptor fontDescriptorWithName:@"HelveticaNeue-mediumitalic" size:kNormalFontSize];
+    descriptor = [descriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitBold|UIFontDescriptorTraitItalic];
+    UIFont *font = [UIFont fontWithDescriptor:descriptor size:kNormalFontSize];
+    return font;
+}
+
+- (UIFont *)fontForMonospace
+{
+    UIFontDescriptor *descriptor = [UIFontDescriptor fontDescriptorWithName:@"Courier" size:kNormalFontSize];
+    descriptor = [descriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitMonoSpace];
+    UIFont *font = [UIFont fontWithDescriptor:descriptor size:kNormalFontSize];
+    return font;
+}
+
+#pragma mark - Markdown Additions
 
 static NSString *const TSMarkdownStrongEmRegex = @"(?<=[^\\*_]|^)(\\*|_)[^\\*_]+[^\\*_\\n]+(\\*|_)(?=[^\\*_]+[^\\*_\\n]+(\\*|_)(?=[^\\*_]|$)";
 

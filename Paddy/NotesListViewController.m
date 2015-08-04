@@ -165,6 +165,15 @@
     [self.notesListTableView endUpdates];
 }
 
+- (void)swipedToPinCell:(NoteCell *)cell
+{
+    [[[UIAlertView alloc] initWithTitle:@"Pinned!"
+                               message:[NSString stringWithFormat:@"%@",cell]
+                              delegate:self
+                     cancelButtonTitle:@"Close"
+                     otherButtonTitles:nil] show];
+}
+
 #pragma mark - UISearchBar Delegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText

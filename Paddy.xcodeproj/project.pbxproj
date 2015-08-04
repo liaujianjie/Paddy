@@ -44,6 +44,7 @@
 		0FD72ECF1B5F949C002DA2F5 /* NotesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ECE1B5F949C002DA2F5 /* NotesListViewController.m */; };
 		0FD72ED21B5F95BA002DA2F5 /* NSIndexPath+displayableString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+displayableString.m */; };
 		0FD72EDE1B5F9C50002DA2F5 /* NotesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */; };
+		0FE843AA1B71065D008CBAEF /* cell_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FE843A91B71065D008CBAEF /* cell_pin.png */; };
 		0FFD115D1B6D1E700077076C /* PDNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD115C1B6D1E700077076C /* PDNote.m */; };
 		0FFD11601B6D1EDF0077076C /* PDReminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD115F1B6D1EDF0077076C /* PDReminder.m */; };
 		0FFD119F1B6D31670077076C /* NSString+locationHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FFD119E1B6D31670077076C /* NSString+locationHelpers.m */; };
@@ -104,6 +105,7 @@
 		0FD72ED11B5F95BA002DA2F5 /* NSIndexPath+displayableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+displayableString.m"; sourceTree = "<group>"; };
 		0FD72EDC1B5F9C50002DA2F5 /* NotesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesManager.h; sourceTree = "<group>"; };
 		0FD72EDD1B5F9C50002DA2F5 /* NotesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesManager.m; sourceTree = "<group>"; };
+		0FE843A91B71065D008CBAEF /* cell_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_pin.png; sourceTree = "<group>"; };
 		0FFD115B1B6D1E700077076C /* PDNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDNote.h; sourceTree = "<group>"; };
 		0FFD115C1B6D1E700077076C /* PDNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDNote.m; sourceTree = "<group>"; };
 		0FFD115E1B6D1EDF0077076C /* PDReminder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDReminder.h; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 		0F7820EC1B61631F006063F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0FE843A91B71065D008CBAEF /* cell_pin.png */,
 				0F56AEE81B64BCAA00AB3880 /* editing-numberedlist-active.png */,
 				0F56AEE91B64BCAA00AB3880 /* editing-bulletedlist-active.png */,
 				0F56AEEA1B64BCAA00AB3880 /* editing-numberedlist-muted.png */,
@@ -326,6 +329,7 @@
 				0F56AF051B64BCAA00AB3880 /* delete@2x.png in Resources */,
 				0FD601E21B611CE6007544AC /* Paddy.xcdatamodeld in Resources */,
 				0F56AF011B64BCAA00AB3880 /* editing-underline-active.png in Resources */,
+				0FE843AA1B71065D008CBAEF /* cell_pin.png in Resources */,
 				0F56AF001B64BCAA00AB3880 /* editing-italic-muted.png in Resources */,
 				0F56AF0A1B64BCAA00AB3880 /* cell_delete.png in Resources */,
 				0F0A50241B633BF0002351BB /* NoteCell.xib in Resources */,

@@ -38,5 +38,6 @@
 
 - (void)swipedToDeleteNoteAtCell:(NoteCell *)cell;
 - (void)swipedToCreateReminder:(NoteCell *)cell;
+- (void)swipedToPinCell:(NoteCell *)cell;
 
 @end

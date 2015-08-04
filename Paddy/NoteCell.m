@@ -37,13 +37,20 @@
 
 - (void)setupSwipeGesture
 {
-    //    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
+    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
     UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
     UIColor *yellowColor = [UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0];
     //    UIColor *brownColor = [UIColor colorWithRed:206.0 / 255.0 green:149.0 / 255.0 blue:98.0 / 255.0 alpha:1.0];
     
     [self setDefaultColor:[UIColor colorWithHexNum:0xF0F0F0 alpha:1.0]];
     
+    [self setSwipeGestureWithView:[self cellPinView]
+                            color:greenColor
+                             mode:MCSwipeTableViewCellModeSwitch
+                            state:MCSwipeTableViewCellState1
+                  completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+                    [self.swipeGestureDelegate swipedToPinCell:self];
+                  }];
     [self setSwipeGestureWithView:[self cellReminderView]
                             color:yellowColor
                              mode:MCSwipeTableViewCellModeSwitch
@@ -73,6 +80,14 @@
 - (UIView *)cellReminderView
 {
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_clock.png"]];
+    [imageView setFrame:CGRectMake(0.0, 0.0, 24.0, 24.0)];
+    
+    return imageView;
+}
+
+- (UIView *)cellPinView
+{
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"cell_pin.png"]];
     [imageView setFrame:CGRectMake(0.0, 0.0, 24.0, 24.0)];
     
     return imageView;
