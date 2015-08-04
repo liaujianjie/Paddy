@@ -190,17 +190,7 @@
 
 - (void)swipedToPinCell:(NoteCell *)cell
 {
-    PDNote *note = cell.note;
-    
-    BOOL pinned = cell.note.pinned.boolValue;
-    
-    if (pinned) {
-        note.pinned = [NSNumber numberWithBool:false];
-    }
-    else
-        note.pinned = [NSNumber numberWithBool:true];
-    
-    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+    [[NotesManager sharedNotesManager] togglePinNote:cell.note];
     
     [[[UIAlertView alloc] initWithTitle:@"Updated!"
                                message:[NSString stringWithFormat:@"%@, %@",cell.titleLabel.text, cell.note.pinned]

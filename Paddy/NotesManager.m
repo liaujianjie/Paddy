@@ -99,6 +99,18 @@
     }
 }
 
+- (void)togglePinNote:(PDNote *)note {
+    BOOL pinned = note.pinned.boolValue;
+    
+    if (pinned) {
+        note.pinned = [NSNumber numberWithBool:false];
+    }
+    else
+        note.pinned = [NSNumber numberWithBool:true];
+    
+    [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+}
+
 #pragma mark Notes Getters
 
 - (NSArray *)allNotes {
@@ -130,10 +142,6 @@
 - (void)exit {
     [MagicalRecord cleanUp];
 }
-
-#pragma mark - Reminder Handler
-
-
 
 #pragma mark - Private Helpers
 

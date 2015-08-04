@@ -46,6 +46,7 @@ typedef NS_ENUM(NSUInteger, NotesManagerSortingOption)
 - (PDNote *)createBlankNote;
 - (void)updateNote:(PDNote *)note withContent:(NSString *)content andTitle:(NSString *)title;
 - (void)deleteNote:(PDNote *)note asynchronously:(BOOL)asynchronously;
+- (void)togglePinNote:(PDNote *)note;
 
 - (void)exit;
 
