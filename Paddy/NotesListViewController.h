@@ -18,9 +18,14 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *notesListTableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *addNoteButton;
-@property (nonatomic) IBOutlet NSLayoutConstraint *undoToasterVerticalPositionContraint;
+
+@property (weak, nonatomic) IBOutlet UIButton *addNoteButton;
+@property (weak, nonatomic) IBOutlet UIButton *undoButton;
+@property (weak, nonatomic) IBOutlet UIButton *redoButton;
 
 - (IBAction)pressedNewNote:(id)sender;
+- (IBAction)pressedUndo:(id)sender;
+- (IBAction)pressedRedo:(id)sender;
+
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F19a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aSX-5h-TM1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aSX-5h-TM1">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -71,44 +71,64 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="gOI-3c-D1f"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nmw-4b-3Tq">
-                                <rect key="frame" x="0.0" y="450" width="320" height="50"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuI-SN-iXr">
-                                        <rect key="frame" x="104" y="6" width="111" height="38"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                        <state key="normal" title="Undo deletion">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mse-js-tYq">
-                                        <rect key="frame" x="260" y="10" width="50" height="30"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                        <state key="normal" title="Dismiss">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.01176470588" green="0.47843137250000001" blue="1" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJN-wq-F6d" userLabel="Compose Button">
+                                <rect key="frame" x="260" y="440" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="mse-js-tYq" secondAttribute="centerY" id="Jv5-JW-2rY"/>
-                                    <constraint firstAttribute="height" constant="50" id="Kmh-YP-69v"/>
-                                    <constraint firstAttribute="centerX" secondItem="kuI-SN-iXr" secondAttribute="centerX" id="Vxn-1o-wXy"/>
-                                    <constraint firstAttribute="centerY" secondItem="kuI-SN-iXr" secondAttribute="centerY" id="hnJ-9u-m5f"/>
-                                    <constraint firstAttribute="trailing" secondItem="mse-js-tYq" secondAttribute="trailing" constant="10" id="lwc-PB-PHe"/>
+                                    <constraint firstAttribute="height" constant="50" id="uOP-WB-9Cf"/>
+                                    <constraint firstAttribute="width" constant="50" id="xsm-44-HBT"/>
                                 </constraints>
-                            </view>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" image="compose.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedNewNote:" destination="9pv-A4-QxB" eventType="touchUpInside" id="g8R-fA-axn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sdg-C5-daZ" userLabel="Redo Button">
+                                <rect key="frame" x="200" y="440" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="CYg-db-zMU"/>
+                                    <constraint firstAttribute="height" constant="50" id="oSv-sJ-jJp"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" title="+" image="redo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedRedo:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kLd-cD-Fkn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9S-sr-YO8" userLabel="Undo Button">
+                                <rect key="frame" x="140" y="440" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0kB-MB-Mds"/>
+                                    <constraint firstAttribute="width" constant="50" id="klY-Xd-RSz"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" image="undo.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedUndo:" destination="9pv-A4-QxB" eventType="touchUpInside" id="FDd-7f-eZO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="76B-ct-An7" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="0Fz-LQ-5a5"/>
-                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Nmw-4b-3Tq" secondAttribute="bottom" id="Ekn-y6-UmM"/>
+                            <constraint firstItem="DJN-wq-F6d" firstAttribute="leading" secondItem="Sdg-C5-daZ" secondAttribute="trailing" constant="10" id="CpN-zJ-ciw"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="Sdg-C5-daZ" secondAttribute="bottom" constant="10" id="GsF-WK-eov"/>
                             <constraint firstItem="76B-ct-An7" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="IoQ-yn-lCm"/>
+                            <constraint firstItem="Sdg-C5-daZ" firstAttribute="leading" secondItem="j9S-sr-YO8" secondAttribute="trailing" constant="10" id="Mpg-sc-3xg"/>
                             <constraint firstAttribute="trailing" secondItem="76B-ct-An7" secondAttribute="trailing" id="NJM-J2-zdt"/>
-                            <constraint firstAttribute="trailing" secondItem="Nmw-4b-3Tq" secondAttribute="trailing" id="dzP-PT-xzf"/>
+                            <constraint firstAttribute="trailing" secondItem="DJN-wq-F6d" secondAttribute="trailing" constant="10" id="SHh-JK-qmi"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="j9S-sr-YO8" secondAttribute="bottom" constant="10" id="XDj-SQ-BGe"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="DJN-wq-F6d" secondAttribute="bottom" constant="10" id="bUB-vY-i4u"/>
                             <constraint firstAttribute="bottom" secondItem="76B-ct-An7" secondAttribute="bottom" id="kuN-Go-Nbk"/>
-                            <constraint firstItem="Nmw-4b-3Tq" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="zNn-6a-FuW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Notes" image="first" id="acW-dT-cKf"/>
@@ -116,11 +136,11 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="Foq-Sy-Gjc"/>
                         <view key="titleView" contentMode="scaleToFill" id="7iB-id-e3R">
-                            <rect key="frame" x="50" y="6" width="220" height="33"/>
+                            <rect key="frame" x="15" y="5.5" width="290" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7S-nU-3og">
-                                    <rect key="frame" x="-30" y="-6" width="280" height="44"/>
+                                    <rect key="frame" x="-30" y="-6" width="350" height="44"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
@@ -136,17 +156,13 @@
                                 <constraint firstItem="e7S-nU-3og" firstAttribute="leading" secondItem="7iB-id-e3R" secondAttribute="leading" constant="-30" id="uZg-Nz-R1b"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="gx7-0f-p0K">
-                            <connections>
-                                <action selector="pressedNewNote:" destination="9pv-A4-QxB" id="km0-9B-ht7"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addNoteButton" destination="gx7-0f-p0K" id="zfz-l3-Bzd"/>
+                        <outlet property="addNoteButton" destination="DJN-wq-F6d" id="N8k-tS-Xii"/>
                         <outlet property="notesListTableView" destination="76B-ct-An7" id="FGJ-8p-Fb5"/>
+                        <outlet property="redoButton" destination="Sdg-C5-daZ" id="McV-xZ-LCo"/>
                         <outlet property="searchBar" destination="e7S-nU-3og" id="Sif-dw-uEU"/>
-                        <outlet property="undoToasterVerticalPositionContraint" destination="Ekn-y6-UmM" id="3QV-SK-12C"/>
+                        <outlet property="undoButton" destination="j9S-sr-YO8" id="daF-sn-ZGG"/>
                         <segue destination="pYv-8I-oKi" kind="presentation" identifier="GoToExistingNote" id="Ldc-BM-MGu"/>
                         <segue destination="pYv-8I-oKi" kind="presentation" identifier="GoToNewNote" id="G0Y-ig-Qvm"/>
                         <segue destination="ifq-ts-Ehl" kind="presentation" identifier="PopReminderDatePicker" id="7kJ-kx-IMk"/>
@@ -582,13 +598,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="compose.png" width="100" height="100"/>
         <image name="delete.png" width="14" height="14"/>
         <image name="editing-bold-muted.png" width="64" height="64"/>
         <image name="editing-bulletedlist-muted.png" width="64" height="64"/>
         <image name="editing-italic-muted.png" width="64" height="64"/>
         <image name="editing-numberedlist-muted.png" width="64" height="64"/>
         <image name="first" width="30" height="30"/>
+        <image name="redo.png" width="100" height="100"/>
         <image name="second" width="30" height="30"/>
+        <image name="undo.png" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="G0Y-ig-Qvm"/>

@@ -48,7 +48,15 @@
     searchTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.searchBar.placeholder attributes:@{NSFontAttributeName:font}];
     searchTextField.font = font;
     
-    self.undoToasterVerticalPositionContraint.constant = -50;
+    for (UIButton *button in @[self.undoButton,self.redoButton,self.addNoteButton])
+    {
+        button.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+        button.layer.shadowColor = [UIColor colorWithWhite:0.0 alpha:1.0].CGColor;
+        button.layer.shadowOpacity = 0.1;
+        button.layer.shadowRadius = 1.0;
+        button.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.1].CGColor;
+        button.layer.borderWidth = 0.5;
+    }
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
 }
@@ -160,6 +168,12 @@
     [self performSegueWithIdentifier:@"GoToNewNote" sender:sender];
 }
 
+- (IBAction)pressedUndo:(id)sender {
+}
+
+- (IBAction)pressedRedo:(id)sender {
+}
+
 - (void)swipedToCreateReminder:(NoteCell *)cell
 {
     noteToSend = cell.note;
@@ -203,20 +217,9 @@
     
     const CGFloat requiredOffsetForNewNote = 150.0;
     if (scrollView == self.notesListTableView)
-    {
-        UIView *buttonView = [self.addNoteButton valueForKey:@"view"];
-//        UIImageView *buttonImageView = [buttonView valueForKey:@"_imageView"];
-        
+    {   
         if (scrollView.contentOffset.y < -requiredOffsetForNewNote)
             [self performSegueWithIdentifier:@"GoToNewNote" sender:scrollView];
-        
-        if (scrollView.contentOffset.y < 0)
-        {
-            CGFloat scaleAmount = 1.0 + (-scrollView.contentOffset.y)/requiredOffsetForNewNote * 0.5;
-            buttonView.transform = CGAffineTransformMakeScale(scaleAmount, scaleAmount);
-        }
-        else
-            buttonView.transform = CGAffineTransformMakeScale(1.0, 1.0);
     }
 }
 
