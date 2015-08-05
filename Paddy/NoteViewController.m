@@ -32,6 +32,7 @@
     
     self.contentTextView.alwaysBounceVertical = YES;
     self.contentTextView.allowsEditingTextAttributes = YES;
+    self.contentTextView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
     self.titleTextField.text = note.title;
     self.contentTextView.markdown = note.content;
