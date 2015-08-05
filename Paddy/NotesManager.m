@@ -114,8 +114,9 @@
 #pragma mark Notes Getters
 
 - (NSArray *)allNotes {
-    NSArray *notesSorted = [PDNote MR_findAllSortedBy:[self _sortByStringFromType:NotesManagerSortingByDefault]
+    NSArray *notesSorted = [PDNote MR_findAllSortedBy:[self _sortByStringFromType:NotesManagerSortingByPinned]
                                             ascending:[self _optionBoolFromType:NotesManagerSortingOptionDescending]];
+    
     return notesSorted;
 }
 
@@ -124,11 +125,13 @@
     NSArray *notesSorted = [PDNote MR_findAllSortedBy:[self _sortByStringFromType:NotesManagerSortingByDefault]
                                             ascending:[self _optionBoolFromType:NotesManagerSortingOptionDescending]
                                         withPredicate:predicate];
+    
     return notesSorted;
 }
 
 - (NSUInteger)allNotesCount {
     NSUInteger count = [PDNote MR_countOfEntities];
+    
     return count;
 }
 
@@ -136,6 +139,7 @@
 {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(title CONTAINS[c] %@) OR (content CONTAINS[c] %@)", searchTerm, searchTerm];
     NSUInteger count = [PDNote MR_countOfEntitiesWithPredicate:predicate];
+    
     return count;
 }
 
@@ -159,6 +163,9 @@
         return @"content";
     else if (type == NotesManagerSortingByReminder)
         return @"createdDate";
+    else if (type == NotesManagerSortingByPinned)
+        return @"pinned";
+    
     return defaultSortBy;
 }
 

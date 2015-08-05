@@ -18,7 +18,8 @@ typedef NS_ENUM(NSUInteger, NotesManagerSortingBy)
     NotesManagerSortingByLastModifiedDate,
     NotesManagerSortingByTitle,
     NotesManagerSortingByContent,
-    NotesManagerSortingByReminder
+    NotesManagerSortingByReminder,
+    NotesManagerSortingByPinned
 };
 
 typedef NS_ENUM(NSUInteger, NotesManagerSortingOption)

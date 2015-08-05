@@ -131,6 +131,9 @@
     cell.searchTerm = self.searchBar.text;
     cell.swipeGestureDelegate = self;
     
+    if (cell.note.pinned.boolValue == true)
+        cell.backgroundColor = [UIColor greenColor];
+    
     return cell;
 }
 
@@ -192,11 +195,13 @@
 {
     [[NotesManager sharedNotesManager] togglePinNote:cell.note];
     
-    [[[UIAlertView alloc] initWithTitle:@"Updated!"
-                               message:[NSString stringWithFormat:@"%@, %@",cell.titleLabel.text, cell.note.pinned]
-                              delegate:self
-                     cancelButtonTitle:@"Close"
-                     otherButtonTitles:nil] show];
+    if (cell.note.pinned.boolValue == true) {
+        cell.backgroundColor = [UIColor greenColor];
+    } else {
+        cell.backgroundColor = [UIColor colorWithHexNum:0xF0F0F0 alpha:1.0];
+    }
+    
+    [self.notesListTableView reloadData];
 }
 
 #pragma mark - UISearchBar Delegate
